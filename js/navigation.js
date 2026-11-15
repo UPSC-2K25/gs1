@@ -1,1 +1,813 @@
 
+(() => {
+  "use strict";
+
+  const SCRIPT_PATH = "js/navigation.js";
+  const CONFIG_PATH = "data/navigation.json";
+
+  const scriptElement =
+    document.currentScript ||
+    document.querySelector(`script[src*="${SCRIPT_PATH}"]`);
+
+  const scriptUrl = scriptElement
+    ? new URL(scriptElement.src, window.location.href)
+    : new URL(SCRIPT_PATH, window.location.href);
+
+  const SITE_ROOT = new URL("../", scriptUrl);
+  const CONFIG_URL = new URL(CONFIG_PATH, SITE_ROOT);
+
+  let config = null;
+  let pageContext = null;
+
+  function normalizePath(path) {
+    if (!path) return "/";
+    let value = String(path).replace(/\\/g, "/");
+    value = value.split("?")[0].split("#")[0];
+    value = value.replace(/\/+/g, "/");
+
+    if (!value.startsWith("/")) value = `/${value}`;
+    if (value.length > 1 && value.endsWith("/")) {
+      value = value.slice(0, -1);
+    }
+
+    return value;
+  }
+
+  function resolveSitePath(path) {
+    if (!path) return SITE_ROOT.href;
+
+    const value = String(path);
+
+    if (/^https?:\/\//i.test(value)) return value;
+
+    return new URL(value.replace(/^\/+/, ""), SITE_ROOT).href;
+  }
+
+  function currentPath() {
+    const rootPath = normalizePath(
+      new URL(SITE_ROOT.href).pathname
+    );
+
+    const locationPath = normalizePath(window.location.pathname);
+
+    if (rootPath === "/") return locationPath;
+
+    if (locationPath.startsWith(rootPath)) {
+      return normalizePath(
+        locationPath.slice(rootPath.length) || "/"
+      );
+    }
+
+    return locationPath;
+  }
+
+  function isCurrentPath(path) {
+    return normalizePath(path) === normalizePath(currentPath());
+  }
+
+  function createElement(tag, className, text) {
+    const element = document.createElement(tag);
+
+    if (className) element.className = className;
+    if (text !== undefined && text !== null) {
+      element.textContent = String(text);
+    }
+
+    return element;
+  }
+
+  function createLink(label, path, className) {
+    const link = createElement("a", className, label);
+    link.href = resolveSitePath(path);
+
+    if (isCurrentPath(path)) {
+      link.setAttribute("aria-current", "page");
+    }
+
+    return link;
+  }
+
+  function getOrCreate(selector, parent, tag, className) {
+    const existing = document.querySelector(selector);
+    if (existing) return existing;
+
+    const element = createElement(tag || "div", className);
+
+    if (parent) parent.appendChild(element);
+
+    return element;
+  }
+
+  function setText(selector, value) {
+    const element = document.querySelector(selector);
+    if (element && value !== undefined && value !== null) {
+      element.textContent = value;
+    }
+  }
+
+  function getPageContext() {
+    const path = currentPath();
+
+    if (path === "/" || path === "/index.html") {
+      return {
+        type: "home",
+        path
+      };
+    }
+
+    for (const section of config.sections) {
+      const sectionPath = normalizePath(section.path);
+
+      if (
+        path === sectionPath ||
+        path === `${sectionPath}/index.html`
+      ) {
+        return {
+          type: "module",
+          section,
+          path
+        };
+      }
+
+      for (let index = 0; index < section.chapters.length; index++) {
+        const chapter = section.chapters[index];
+        const chapterPath = normalizePath(chapter.path);
+
+        if (
+          path === chapterPath ||
+          path === `${chapterPath}/index.html`
+        ) {
+          return {
+            type: "chapter",
+            section,
+            chapter,
+            chapterIndex: index,
+            path
+          };
+        }
+      }
+    }
+
+    return {
+      type: "unknown",
+      path
+    };
+  }
+
+  function validateConfig(data) {
+    if (!data || typeof data !== "object") {
+      throw new Error("Navigation configuration is missing or invalid.");
+    }
+
+    if (!data.site || !Array.isArray(data.sections)) {
+      throw new Error(
+        "Navigation configuration must contain site and sections."
+      );
+    }
+
+    const sectionIds = new Set();
+    const sectionPaths = new Set();
+    const chapterIds = new Set();
+
+    data.sections.forEach((section) => {
+      if (!section.id || !section.label || !section.path) {
+        throw new Error("A module is missing its id, label, or path.");
+      }
+
+      if (sectionIds.has(section.id)) {
+        throw new Error(`Duplicate module id: ${section.id}`);
+      }
+
+      const normalizedSectionPath = normalizePath(section.path);
+
+      if (sectionPaths.has(normalizedSectionPath)) {
+        throw new Error(
+          `Duplicate module path: ${normalizedSectionPath}`
+        );
+      }
+
+      sectionIds.add(section.id);
+      sectionPaths.add(normalizedSectionPath);
+
+      if (!Array.isArray(section.chapters)) {
+        throw new Error(
+          `Module "${section.label}" has no chapters array.`
+        );
+      }
+
+      if (section.chapters.length > 15) {
+        console.warn(
+          `Module "${section.label}" contains more than 15 chapters.`
+        );
+      }
+
+      section.chapters.forEach((chapter) => {
+        if (!chapter.id || !chapter.label || !chapter.path) {
+          throw new Error(
+            `A chapter in "${section.label}" is missing required fields.`
+          );
+        }
+
+        if (chapterIds.has(chapter.id)) {
+          throw new Error(`Duplicate chapter id: ${chapter.id}`);
+        }
+
+        chapterIds.add(chapter.id);
+      });
+    });
+
+    return data;
+  }
+
+  function renderHeader() {
+    const header = document.querySelector("[data-site-header]");
+    if (!header) return;
+
+    header.replaceChildren();
+
+    const wrapper = createElement("div", "site-header-inner");
+
+    const brand = createElement("a", "site-brand");
+    brand.href = resolveSitePath("index.html");
+
+    const mark = createElement(
+      "span",
+      "site-brand-mark",
+      config.site.shortName || "GS-I"
+    );
+
+    const brandText = createElement("span", "site-brand-text");
+    brandText.textContent =
+      config.site.name || "UPSC GS-I";
+
+    brand.append(mark, brandText);
+
+    const nav = createElement("nav", "primary-navigation");
+    nav.setAttribute("aria-label", "Primary navigation");
+
+    const homeLink = createLink(
+      "Home",
+      "index.html",
+      "primary-nav-link"
+    );
+
+    nav.appendChild(homeLink);
+
+    const modules = createElement("div", "module-dropdown");
+
+    const dropdownButton = createElement(
+      "button",
+      "module-dropdown-toggle",
+      config.interface?.moduleMenuLabel || "Modules"
+    );
+
+    dropdownButton.type = "button";
+    dropdownButton.setAttribute("aria-expanded", "false");
+
+    const dropdownList = createElement(
+      "div",
+      "module-dropdown-list"
+    );
+
+    dropdownList.hidden = true;
+
+    config.sections.forEach((section) => {
+      const link = createLink(
+        `${section.number ? `${section.number}. ` : ""}${section.label}`,
+        section.path,
+        "module-dropdown-link"
+      );
+
+      const count = createElement(
+        "span",
+        "module-dropdown-count",
+        section.chapters.length
+      );
+
+      link.appendChild(count);
+      dropdownList.appendChild(link);
+    });
+
+    dropdownButton.addEventListener("click", () => {
+      const isExpanded =
+        dropdownButton.getAttribute("aria-expanded") === "true";
+
+      dropdownButton.setAttribute(
+        "aria-expanded",
+        String(!isExpanded)
+      );
+
+      dropdownList.hidden = isExpanded;
+    });
+
+    modules.append(dropdownButton, dropdownList);
+    nav.appendChild(modules);
+
+    wrapper.append(brand, nav);
+
+    if (config.interface?.search !== false) {
+      const search = createSearch();
+      if (search) wrapper.appendChild(search);
+    }
+
+    header.appendChild(wrapper);
+  }
+
+  function createSearch() {
+    const wrapper = createElement("div", "site-search");
+
+    const input = createElement("input", "site-search-input");
+    input.type = "search";
+    input.placeholder = "Search modules and chapters";
+    input.setAttribute(
+      "aria-label",
+      "Search modules and chapters"
+    );
+
+    const results = createElement("div", "site-search-results");
+    results.hidden = true;
+
+    const searchableItems = [];
+
+    config.sections.forEach((section) => {
+      searchableItems.push({
+        label: section.label,
+        path: section.path,
+        type: "Module"
+      });
+
+      section.chapters.forEach((chapter) => {
+        searchableItems.push({
+          label: chapter.label,
+          path: chapter.path,
+          type: section.label
+        });
+      });
+    });
+
+    input.addEventListener("input", () => {
+      const query = input.value.trim().toLowerCase();
+      results.replaceChildren();
+
+      if (!query) {
+        results.hidden = true;
+        return;
+      }
+
+      const matches = searchableItems
+        .filter((item) =>
+          item.label.toLowerCase().includes(query)
+        )
+        .slice(0, 12);
+
+      if (!matches.length) {
+        results.appendChild(
+          createElement("div", "search-no-results", "No results found")
+        );
+      } else {
+        matches.forEach((item) => {
+          const link = createLink(
+            item.label,
+            item.path,
+            "search-result-link"
+          );
+
+          const type = createElement(
+            "span",
+            "search-result-type",
+            item.type
+          );
+
+          link.appendChild(type);
+          results.appendChild(link);
+        });
+      }
+
+      results.hidden = false;
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!wrapper.contains(event.target)) {
+        results.hidden = true;
+      }
+    });
+
+    wrapper.append(input, results);
+    return wrapper;
+  }
+
+  function renderHomeIntro() {
+    const intro = document.querySelector("[data-home-intro]");
+    if (!intro) return;
+
+    const text =
+      config.site.homeIntro ||
+      config.site.description ||
+      "";
+
+    intro.textContent = text;
+  }
+
+  function renderHomeDirectory() {
+    const container = document.querySelector(
+      "[data-module-directory]"
+    );
+
+    if (!container) return;
+
+    container.replaceChildren();
+
+    const table = createElement("table", "module-directory-table");
+    const thead = createElement("thead");
+    const tbody = createElement("tbody");
+    const headerRow = createElement("tr");
+
+    const headings = [
+      "Module No.",
+      "Module Name",
+      "Description / Coverage",
+      "No. of Chapters"
+    ];
+
+    headings.forEach((heading) => {
+      const th = createElement("th", "", heading);
+      th.scope = "col";
+      headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+
+    config.sections.forEach((section, index) => {
+      const row = createElement("tr");
+
+      const numberCell = createElement(
+        "td",
+        "module-table-number",
+        section.number || index + 1
+      );
+
+      const nameCell = createElement("td");
+      const nameLink = createLink(
+        section.label,
+        section.path,
+        "module-table-link"
+      );
+      nameCell.appendChild(nameLink);
+
+      const descriptionCell = createElement(
+        "td",
+        "module-table-description",
+        section.description || ""
+      );
+
+      const countCell = createElement(
+        "td",
+        "module-table-count",
+        section.chapters.length
+      );
+
+      row.append(
+        numberCell,
+        nameCell,
+        descriptionCell,
+        countCell
+      );
+
+      tbody.appendChild(row);
+    });
+
+    table.append(thead, tbody);
+    container.appendChild(table);
+  }
+
+  function renderModulePage() {
+    const section = pageContext.section;
+    if (!section) return;
+
+    setText("[data-page-title]", section.label);
+    setText("[data-module-title]", section.label);
+    setText("[data-module-description]", section.description || "");
+    setText("[data-module-explanation]", section.explanation || "");
+
+    const guidance = document.querySelector(
+      "[data-study-guidance-list]"
+    );
+
+    if (guidance) {
+      guidance.replaceChildren();
+
+      (section.studyGuidance || []).forEach((item) => {
+        guidance.appendChild(
+          createElement("li", "", item)
+        );
+      });
+    }
+
+    setText(
+      "[data-exam-relevance-text]",
+      section.examRelevance || ""
+    );
+
+    const chapterList = document.querySelector(
+      "[data-chapter-list]"
+    );
+
+    if (chapterList) {
+      chapterList.replaceChildren();
+
+      section.chapters.forEach((chapter, index) => {
+        const item = createElement("li", "chapter-directory-item");
+
+        const link = createLink(
+          `${index + 1}. ${chapter.label}`,
+          chapter.path,
+          "chapter-directory-link"
+        );
+
+        item.appendChild(link);
+
+        if (chapter.status) {
+          item.appendChild(
+            createElement(
+              "span",
+              "chapter-status",
+              chapter.status
+            )
+          );
+        }
+
+        chapterList.appendChild(item);
+      });
+    }
+  }
+
+  function renderSidebar() {
+    const sidebar = document.querySelector(
+      "[data-secondary-navigation]"
+    );
+
+    if (!sidebar || !pageContext.section) return;
+
+    if (
+      config.interface?.secondaryNavigation &&
+      config.interface.secondaryNavigation !== "module-chapters"
+    ) {
+      return;
+    }
+
+    sidebar.replaceChildren();
+
+    const heading = createElement(
+      "h2",
+      "sidebar-heading",
+      pageContext.section.label
+    );
+
+    const list = createElement("ul", "sidebar-chapter-list");
+
+    pageContext.section.chapters.forEach((chapter, index) => {
+      const item = createElement("li", "sidebar-chapter-item");
+
+      const link = createLink(
+        `${index + 1}. ${chapter.label}`,
+        chapter.path,
+        "sidebar-chapter-link"
+      );
+
+      if (
+        pageContext.type === "chapter" &&
+        pageContext.chapter.id === chapter.id
+      ) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+      }
+
+      item.appendChild(link);
+      list.appendChild(item);
+    });
+
+    sidebar.append(heading, list);
+  }
+
+  function renderBreadcrumbs() {
+    const container = document.querySelector("[data-breadcrumbs]");
+    if (!container) return;
+
+    container.replaceChildren();
+
+    const home = createLink("Home", "index.html");
+    container.appendChild(home);
+
+    if (pageContext.section) {
+      container.appendChild(
+        createElement("span", "breadcrumb-separator", " / ")
+      );
+
+      const moduleLink = createLink(
+        pageContext.section.label,
+        pageContext.section.path
+      );
+
+      container.appendChild(moduleLink);
+    }
+
+    if (pageContext.chapter) {
+      container.appendChild(
+        createElement("span", "breadcrumb-separator", " / ")
+      );
+
+      container.appendChild(
+        createElement(
+          "span",
+          "breadcrumb-current",
+          pageContext.chapter.label
+        )
+      );
+    }
+  }
+
+  function renderPreviousNext() {
+    if (
+      pageContext.type !== "chapter" ||
+      !pageContext.section
+    ) {
+      return;
+    }
+
+    const section = pageContext.section;
+    const index = pageContext.chapterIndex;
+
+    const container = document.querySelector(
+      "[data-chapter-pagination]"
+    );
+
+    if (!container) return;
+
+    container.replaceChildren();
+
+    if (index > 0) {
+      const previous = section.chapters[index - 1];
+
+      const link = createLink(
+        `← Previous: ${previous.label}`,
+        previous.path,
+        "chapter-previous"
+      );
+
+      container.appendChild(link);
+    } else {
+      container.appendChild(
+        createElement("span", "chapter-previous disabled")
+      );
+    }
+
+    if (index < section.chapters.length - 1) {
+      const next = section.chapters[index + 1];
+
+      const link = createLink(
+        `Next: ${next.label} →`,
+        next.path,
+        "chapter-next"
+      );
+
+      container.appendChild(link);
+    } else {
+      container.appendChild(
+        createElement("span", "chapter-next disabled")
+      );
+    }
+  }
+
+  function renderFooter() {
+    const footer = document.querySelector("[data-site-footer]");
+    if (!footer) return;
+
+    footer.replaceChildren();
+
+    const wrapper = createElement("div", "site-footer-inner");
+
+    const copyright = createElement(
+      "p",
+      "footer-copyright",
+      config.site.footerText ||
+        `UPSC GS-I Knowledge System`
+    );
+
+    const home = createLink(
+      "Home",
+      "index.html",
+      "footer-home-link"
+    );
+
+    wrapper.append(copyright, home);
+    footer.appendChild(wrapper);
+  }
+
+  function renderPageTitle() {
+    const title = document.querySelector("[data-page-title]");
+
+    if (pageContext.type === "home") {
+      document.title =
+        config.site.homeTitle ||
+        config.site.name ||
+        "UPSC GS-I";
+
+      if (title) {
+        title.textContent =
+          config.site.homeTitle ||
+          config.site.name ||
+          "UPSC GS-I";
+      }
+
+      return;
+    }
+
+    if (pageContext.type === "module") {
+      document.title =
+        `${pageContext.section.label} | ${config.site.name || "UPSC GS-I"}`;
+
+      if (title) title.textContent = pageContext.section.label;
+      return;
+    }
+
+    if (pageContext.type === "chapter") {
+      document.title =
+        `${pageContext.chapter.label} | ${config.site.name || "UPSC GS-I"}`;
+
+      if (title) title.textContent = pageContext.chapter.label;
+      return;
+    }
+
+    document.title = config.site.name || "UPSC GS-I";
+  }
+
+  function initialize() {
+    renderHeader();
+    renderHomeIntro();
+    renderBreadcrumbs();
+    renderSidebar();
+    renderPreviousNext();
+    renderFooter();
+    renderPageTitle();
+
+    if (pageContext.type === "home") {
+      renderHomeDirectory();
+    }
+
+    if (pageContext.type === "module") {
+      renderModulePage();
+    }
+
+    document.documentElement.setAttribute(
+      "data-navigation-ready",
+      "true"
+    );
+
+    console.info(
+      `GS-I navigation loaded: ${config.sections.length} modules, ` +
+      `${config.sections.reduce(
+        (total, section) => total + section.chapters.length,
+        0
+      )} chapters.`
+    );
+  }
+
+  async function start() {
+    try {
+      const response = await fetch(CONFIG_URL.href, {
+        cache: "no-cache"
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          `Unable to load navigation configuration: HTTP ${response.status}`
+        );
+      }
+
+      const data = await response.json();
+
+      config = validateConfig(data);
+      pageContext = getPageContext();
+
+      initialize();
+    } catch (error) {
+      console.error("GS-I navigation error:", error);
+
+      document.documentElement.setAttribute(
+        "data-navigation-error",
+        "true"
+      );
+
+      const errorContainer = document.querySelector(
+        "[data-navigation-error-message]"
+      );
+
+      if (errorContainer) {
+        errorContainer.textContent =
+          "Navigation could not be loaded. Please check the navigation configuration and try again.";
+      }
+    }
+  }
+
+  start();
+})();

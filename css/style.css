@@ -1,1 +1,1020 @@
 
+/* =========================================================
+   UPSC GS-I KNOWLEDGE SYSTEM
+   Main stylesheet
+   ========================================================= */
+
+/* 1. Global variables and reset
+   ========================================================= */
+
+:root {
+  --color-primary: #17365d;
+  --color-primary-dark: #102844;
+  --color-primary-light: #eaf0f7;
+  --color-accent: #b7791f;
+
+  --color-text: #263238;
+  --color-text-muted: #5f6b75;
+  --color-heading: #172b4d;
+
+  --color-background: #ffffff;
+  --color-page: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-border: #dce2e8;
+  --color-border-light: #e9edf1;
+
+  --color-link: #174f86;
+  --color-link-hover: #0d355c;
+
+  --color-success: #28734a;
+  --color-warning: #9a6700;
+
+  --header-height: 54px;
+  --sidebar-width: 260px;
+  --content-max-width: 1120px;
+
+  --font-family: Arial, Helvetica, sans-serif;
+
+  --radius-small: 3px;
+  --radius-medium: 5px;
+
+  --shadow-light: 0 1px 3px rgba(20, 35, 50, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-page);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  padding-left: 20px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+/* 2. Typography
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--color-heading);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+h1 {
+  font-size: 14px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 14px;
+}
+
+.page-title,
+.module-title,
+.chapter-title {
+  margin-bottom: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary-dark);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.section-title {
+  margin: 20px 0 9px;
+  color: var(--color-primary);
+  font-size: 14px;
+}
+
+small,
+.small-text {
+  font-size: 11px;
+}
+
+.muted,
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+/* 3. Main header
+   ========================================================= */
+
+[data-site-header] {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: var(--header-height);
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  box-shadow: var(--shadow-light);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: var(--header-height);
+  padding: 0 20px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.site-brand:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.site-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 29px;
+  height: 29px;
+  padding: 0 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-small);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.site-brand-text {
+  color: #ffffff;
+}
+
+/* 4. Primary navigation
+   ========================================================= */
+
+.primary-navigation {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  gap: 5px;
+  min-width: 0;
+}
+
+.primary-nav-link,
+.module-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 11px;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.primary-nav-link:hover,
+.module-dropdown-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.primary-nav-link[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* 5. Module dropdown
+   ========================================================= */
+
+.module-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.module-dropdown-toggle::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 8px;
+  border-top: 4px solid #ffffff;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+}
+
+.module-dropdown-list {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  z-index: 1100;
+  width: 290px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+  box-shadow: 0 5px 18px rgba(15, 30, 45, 0.18);
+}
+
+.module-dropdown-list[hidden] {
+  display: none;
+}
+
+.module-dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 9px;
+  border-radius: var(--radius-small);
+  color: var(--color-text);
+  font-size: 12px;
+}
+
+.module-dropdown-link:hover,
+.module-dropdown-link[aria-current="page"] {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.module-dropdown-count {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+/* 6. Search
+   ========================================================= */
+
+.site-search {
+  position: relative;
+  flex: 0 1 220px;
+  min-width: 125px;
+}
+
+.site-search-input {
+  width: 100%;
+  height: 31px;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-small);
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.site-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.site-search-input:focus {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.site-search-results {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  z-index: 1200;
+  width: min(330px, 85vw);
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(15, 30, 45, 0.18);
+}
+
+.site-search-results[hidden] {
+  display: none;
+}
+
+.search-result-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 9px;
+  border-radius: var(--radius-small);
+  color: var(--color-text);
+}
+
+.search-result-link:hover {
+  background: var(--color-primary-light);
+  text-decoration: none;
+}
+
+.search-result-type {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+.search-no-results {
+  padding: 9px;
+  color: var(--color-text-muted);
+}
+
+/* 7. Breadcrumbs
+   ========================================================= */
+
+[data-breadcrumbs] {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 12px 20px 5px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+[data-breadcrumbs] a {
+  color: var(--color-link);
+}
+
+.breadcrumb-separator {
+  margin: 0 5px;
+  color: #929ba3;
+}
+
+.breadcrumb-current {
+  color: var(--color-text-muted);
+}
+
+/* 8. Main page layout
+   ========================================================= */
+
+.page-layout,
+.content-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 20px 28px;
+}
+
+main,
+.main-content,
+[data-main-content] {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.content-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-medium);
+  background: var(--color-background);
+  box-shadow: var(--shadow-light);
+}
+
+/* 9. Secondary chapter navigation
+   ========================================================= */
+
+[data-secondary-navigation] {
+  position: sticky;
+  top: calc(var(--header-height) + 12px);
+  flex: 0 0 var(--sidebar-width);
+  width: var(--sidebar-width);
+  max-height: calc(100vh - var(--header-height) - 24px);
+  overflow-y: auto;
+  padding: 12px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-light);
+  scrollbar-width: thin;
+}
+
+.sidebar-heading {
+  margin: 0 0 9px;
+  padding: 0 5px 8px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sidebar-chapter-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-chapter-item {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-chapter-link {
+  display: block;
+  padding: 6px 7px;
+  border-left: 2px solid transparent;
+  border-radius: 0 var(--radius-small) var(--radius-small) 0;
+  color: var(--color-text);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.sidebar-chapter-link:hover {
+  border-left-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.sidebar-chapter-link.active,
+.sidebar-chapter-link[aria-current="page"] {
+  border-left-color: var(--color-accent);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+/* 10. Home page introduction
+   ========================================================= */
+
+[data-home-intro] {
+  margin: 0 0 18px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* 11. Home page module directory
+   ========================================================= */
+
+[data-module-directory] {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.module-directory-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 12px;
+}
+
+.module-directory-table th,
+.module-directory-table td {
+  padding: 9px 10px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.module-directory-table th {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.module-directory-table tbody tr:nth-child(even) {
+  background: #f7f9fb;
+}
+
+.module-directory-table tbody tr:hover {
+  background: var(--color-primary-light);
+}
+
+.module-table-number,
+.module-table-count {
+  width: 90px;
+  text-align: center !important;
+  white-space: nowrap;
+}
+
+.module-table-link {
+  color: var(--color-link);
+  font-weight: 700;
+}
+
+.module-table-description {
+  color: var(--color-text-muted);
+}
+
+/* 12. Module page
+   ========================================================= */
+
+[data-module-content] {
+  width: 100%;
+}
+
+[data-module-description] {
+  margin-bottom: 12px;
+  color: var(--color-text-muted);
+}
+
+[data-module-explanation] {
+  margin-bottom: 18px;
+}
+
+[data-study-guidance-list] {
+  margin: 7px 0 16px;
+  padding-left: 19px;
+}
+
+[data-study-guidance-list] li {
+  margin-bottom: 5px;
+}
+
+[data-exam-relevance-text] {
+  margin-bottom: 18px;
+}
+
+/* 13. Chapter directory
+   ========================================================= */
+
+[data-chapter-list] {
+  margin: 8px 0 20px;
+  padding-left: 20px;
+}
+
+.chapter-directory-item {
+  margin-bottom: 7px;
+  padding-left: 2px;
+}
+
+.chapter-directory-link {
+  font-weight: 600;
+}
+
+.chapter-status {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: #eef2f5;
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+/* 14. Chapter content
+   ========================================================= */
+
+article {
+  min-width: 0;
+}
+
+article h2,
+article h3,
+article h4 {
+  margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+article ul,
+article ol {
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+article li {
+  margin-bottom: 5px;
+}
+
+article table {
+  width: 100%;
+  margin: 12px 0 18px;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+article table th,
+article table td {
+  padding: 7px 9px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+article table th {
+  background: var(--color-primary-light);
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+article blockquote {
+  margin: 12px 0;
+  padding: 9px 13px;
+  border-left: 3px solid var(--color-accent);
+  background: #f7f8fa;
+  color: var(--color-text-muted);
+}
+
+article pre,
+article code {
+  font-family: Consolas, Monaco, monospace;
+}
+
+article code {
+  padding: 1px 3px;
+  border-radius: 3px;
+  background: #f0f2f4;
+  font-size: 11px;
+}
+
+article pre {
+  overflow-x: auto;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: #f7f8fa;
+  font-size: 11px;
+}
+
+/* 15. Chapter previous/next navigation
+   ========================================================= */
+
+[data-chapter-pagination] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.chapter-previous,
+.chapter-next {
+  display: inline-block;
+  max-width: 48%;
+  padding: 7px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: #ffffff;
+  font-size: 11px;
+}
+
+.chapter-previous:hover,
+.chapter-next:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  text-decoration: none;
+}
+
+.chapter-previous.disabled,
+.chapter-next.disabled {
+  visibility: hidden;
+}
+
+/* 16. Footer
+   ========================================================= */
+
+[data-site-footer] {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid var(--color-border);
+  background: #edf1f5;
+}
+
+.site-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: var(--content-max-width);
+  min-height: 48px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+.footer-copyright {
+  margin: 0;
+}
+
+.footer-home-link {
+  flex: 0 0 auto;
+}
+
+/* 17. General utility classes
+   ========================================================= */
+
+.card,
+.content-card {
+  margin-bottom: 14px;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+}
+
+.info-box {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  background: #f7f9fb;
+}
+
+.warning-box {
+  border-left-color: var(--color-warning);
+}
+
+.success-box {
+  border-left-color: var(--color-success);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 18. Keyboard accessibility
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* 19. Tablet layout
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .site-header-inner {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .primary-navigation {
+    flex: 1 1 auto;
+  }
+
+  .site-search {
+    flex: 0 1 180px;
+  }
+
+  .page-layout,
+  .content-layout {
+    gap: 14px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  [data-secondary-navigation] {
+    padding: 9px 7px;
+  }
+}
+
+/* 20. Mobile layout
+   ========================================================= */
+
+@media (max-width: 700px) {
+  :root {
+    --header-height: auto;
+    --sidebar-width: 100%;
+  }
+
+  .site-header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    padding: 9px 12px;
+  }
+
+  .site-brand {
+    min-height: 30px;
+  }
+
+  .primary-navigation {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .primary-nav-link,
+  .module-dropdown-toggle {
+    min-height: 31px;
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .module-dropdown-list {
+    position: fixed;
+    top: auto;
+    left: 10px;
+    width: calc(100vw - 20px);
+    max-height: 65vh;
+  }
+
+  .site-search {
+    width: 100%;
+    max-width: none;
+    flex: 1 1 100%;
+  }
+
+  .site-search-input {
+    height: 32px;
+  }
+
+  .site-search-results {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+
+  [data-breadcrumbs] {
+    padding: 10px 12px 4px;
+  }
+
+  .page-layout,
+  .content-layout {
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 10px 20px;
+  }
+
+  [data-secondary-navigation] {
+    position: static;
+    width: 100%;
+    max-height: 240px;
+    overflow-y: auto;
+  }
+
+  .content-container {
+    padding: 13px;
+  }
+
+  .module-directory-table {
+    min-width: 570px;
+  }
+
+  [data-chapter-pagination] {
+    align-items: stretch;
+  }
+
+  .chapter-previous,
+  .chapter-next {
+    max-width: 50%;
+    font-size: 10px;
+  }
+
+  .site-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px;
+  }
+}
+
+/* 21. Small mobile screens
+   ========================================================= */
+
+@media (max-width: 420px) {
+  body {
+    font-size: 12px;
+  }
+
+  .site-brand-text {
+    font-size: 13px;
+  }
+
+  .primary-navigation {
+    gap: 1px;
+  }
+
+  .primary-nav-link,
+  .module-dropdown-toggle {
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+
+  .content-container {
+    padding: 10px;
+  }
+
+  .module-directory-table th,
+  .module-directory-table td {
+    padding: 7px;
+  }
+}
+
+/* 22. Reduced motion preference
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
