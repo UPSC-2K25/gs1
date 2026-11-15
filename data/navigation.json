@@ -1,0 +1,777 @@
+
+{
+  "site": {
+    "name": "Indian Heritage, History, Geography and Society",
+    "subtitle": "UPSC GS-I Knowledge System",
+    "brandMark": "GS-I",
+    "home": "index.html",
+    "homeLabel": "Home",
+    "pageTitle": "UPSC GS-I | Indian Heritage, History, Geography and Society",
+    "homeTitle": "UPSC General Studies Paper-I Knowledge System",
+    "homeIntro": "A comprehensive, interconnected knowledge system covering Indian culture and heritage, Indian and world history, Indian society, and the geography of India and the world.",
+    "footer": "Designed for integrated UPSC Prelims and GS-I Mains preparation through factual foundations and conceptual understanding."
+  },
+  "interface": {
+    "primaryNavigation": "module-dropdown",
+    "secondaryNavigation": "module-chapters",
+    "homeLayout": "grouped-module-list",
+    "moduleLayout": "chapter-directory",
+    "showChapterCounts": true,
+    "showModuleNumbers": true,
+    "showBreadcrumbs": true,
+    "showPreviousNext": true,
+    "showSearch": true,
+    "maxChaptersPerModule": 15
+  },
+  "sections": [
+    {
+      "id": "indian-culture",
+      "number": "01",
+      "label": "Indian Cultural Foundations and Heritage",
+      "path": "indian-culture/index.html",
+      "description": "The foundations, evolution, diversity, continuity and preservation of Indian cultural traditions and heritage.",
+      "explanation": "Understand Indian culture as a dynamic and diverse tradition shaped by historical developments, regional interactions, religious ideas and living practices.",
+      "studyGuidance": [
+        "Begin with the meaning, characteristics and sources of Indian culture.",
+        "Trace cultural developments from prehistoric times to the modern period.",
+        "Study continuity, regional diversity and external cultural influences.",
+        "Connect tangible and intangible heritage with conservation and contemporary relevance."
+      ],
+      "examRelevance": "Build factual familiarity with cultural traditions, heritage sites and institutions while analysing cultural continuity, diversity, interaction and preservation.",
+      "chapters": [
+        { "id": "nature-of-indian-culture", "label": "Meaning, Nature and Characteristics of Indian Culture", "path": "indian-culture/nature-of-indian-culture.html", "status": "planned" },
+        { "id": "sources-of-indian-culture", "label": "Sources for the Study of Indian Culture", "path": "indian-culture/sources-of-indian-culture.html", "status": "planned" },
+        { "id": "cultural-evolution", "label": "Cultural Evolution from Prehistoric to Modern India", "path": "indian-culture/cultural-evolution.html", "status": "planned" },
+        { "id": "continuity-and-change", "label": "Continuity and Change in Indian Cultural Traditions", "path": "indian-culture/continuity-and-change.html", "status": "planned" },
+        { "id": "cultural-regions", "label": "Cultural Regions and Diversity of India", "path": "indian-culture/cultural-regions.html", "status": "planned" },
+        { "id": "cultural-exchanges", "label": "Cultural Exchanges and External Influences", "path": "indian-culture/cultural-exchanges.html", "status": "planned" },
+        { "id": "religious-philosophical-traditions", "label": "Religious and Philosophical Traditions: An Overview", "path": "indian-culture/religious-philosophical-traditions.html", "status": "planned" },
+        { "id": "intangible-heritage", "label": "Intangible Cultural Heritage and Living Traditions", "path": "indian-culture/intangible-heritage.html", "status": "planned" },
+        { "id": "heritage-conservation", "label": "Cultural Institutions, Preservation and Heritage Conservation", "path": "indian-culture/heritage-conservation.html", "status": "planned" },
+        { "id": "unesco-heritage-india", "label": "UNESCO World Heritage and Important Cultural Sites in India", "path": "indian-culture/unesco-heritage-india.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "architecture-sculpture",
+      "number": "02",
+      "label": "Indian Architecture and Sculpture",
+      "path": "architecture-sculpture/index.html",
+      "description": "The evolution of Indian architecture, sculpture, monuments, iconography and regional architectural traditions.",
+      "explanation": "Study architectural and sculptural forms through their historical context, materials, techniques, religious associations and regional characteristics.",
+      "studyGuidance": [
+        "Study architecture chronologically, from prehistoric and ancient forms to modern developments.",
+        "Compare Buddhist, Hindu, Jain and Indo-Islamic architectural traditions.",
+        "Identify major regional schools, monuments, sculptures and their distinctive features.",
+        "Use maps and visual comparisons to connect monuments with their locations and periods."
+      ],
+      "examRelevance": "Emphasise identification, chronology, architectural features, regional schools, patronage and the historical significance of monuments and sculptures.",
+      "chapters": [
+        { "id": "prehistoric-architecture", "label": "Prehistoric Art and Early Architectural Traditions", "path": "architecture-sculpture/prehistoric-architecture.html", "status": "planned" },
+        { "id": "indus-architecture", "label": "Indus Valley Town Planning and Architecture", "path": "architecture-sculpture/indus-architecture.html", "status": "planned" },
+        { "id": "mauryan-architecture", "label": "Mauryan Architecture, Pillars and Stupas", "path": "architecture-sculpture/mauryan-architecture.html", "status": "planned" },
+        { "id": "buddhist-architecture", "label": "Buddhist Architecture: Stupas, Chaityas and Viharas", "path": "architecture-sculpture/buddhist-architecture.html", "status": "planned" },
+        { "id": "rock-cut-architecture", "label": "Rock-Cut Architecture and Cave Traditions", "path": "architecture-sculpture/rock-cut-architecture.html", "status": "planned" },
+        { "id": "temple-architecture", "label": "Temple Architecture: Nagara, Dravida and Vesara", "path": "architecture-sculpture/temple-architecture.html", "status": "planned" },
+        { "id": "regional-temple-architecture", "label": "Regional Temple Architecture and Major Schools", "path": "architecture-sculpture/regional-temple-architecture.html", "status": "planned" },
+        { "id": "sultanate-architecture", "label": "Indo-Islamic Architecture: Delhi Sultanate", "path": "architecture-sculpture/sultanate-architecture.html", "status": "planned" },
+        { "id": "mughal-architecture", "label": "Mughal Architecture and Garden Traditions", "path": "architecture-sculpture/mughal-architecture.html", "status": "planned" },
+        { "id": "regional-islamic-architecture", "label": "Regional Sultanate and Deccan Architecture", "path": "architecture-sculpture/regional-islamic-architecture.html", "status": "planned" },
+        { "id": "colonial-modern-architecture", "label": "Colonial and Modern Indian Architecture", "path": "architecture-sculpture/colonial-modern-architecture.html", "status": "planned" },
+        { "id": "indian-sculpture", "label": "Sculpture: Ancient, Classical and Medieval Traditions", "path": "architecture-sculpture/indian-sculpture.html", "status": "planned" },
+        { "id": "iconography-sculptural-techniques", "label": "Iconography, Materials, Techniques and Regional Schools", "path": "architecture-sculpture/iconography-sculptural-techniques.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "painting-performing-arts-literature",
+      "number": "03",
+      "label": "Indian Painting, Performing Arts, Literature and Crafts",
+      "path": "painting-performing-arts-literature/index.html",
+      "description": "Indian painting, music, dance, theatre, puppetry, literature, textiles, handicrafts and traditional knowledge.",
+      "explanation": "Explore India's visual, literary and performing arts through their historical development, regional schools, techniques and cultural significance.",
+      "studyGuidance": [
+        "Identify major art forms, schools, artists, texts and regional traditions.",
+        "Compare classical and folk forms of music, dance and theatre.",
+        "Study literature in its historical, linguistic and philosophical contexts.",
+        "Connect crafts and traditional knowledge with communities and living heritage."
+      ],
+      "examRelevance": "Focus on art-form characteristics, regional associations, chronology, literary traditions, important works and cultural significance.",
+      "chapters": [
+        { "id": "prehistoric-ancient-painting", "label": "Prehistoric and Ancient Indian Painting", "path": "painting-performing-arts-literature/prehistoric-ancient-painting.html", "status": "planned" },
+        { "id": "mural-painting", "label": "Ajanta, Bagh and Other Mural Traditions", "path": "painting-performing-arts-literature/mural-painting.html", "status": "planned" },
+        { "id": "miniature-painting", "label": "Miniature Painting: Mughal, Rajput and Pahari Schools", "path": "painting-performing-arts-literature/miniature-painting.html", "status": "planned" },
+        { "id": "folk-regional-painting", "label": "Regional and Folk Painting Traditions", "path": "painting-performing-arts-literature/folk-regional-painting.html", "status": "planned" },
+        { "id": "classical-music", "label": "Classical Music: Hindustani and Carnatic Traditions", "path": "painting-performing-arts-literature/classical-music.html", "status": "planned" },
+        { "id": "folk-tribal-music", "label": "Folk and Tribal Music Traditions", "path": "painting-performing-arts-literature/folk-tribal-music.html", "status": "planned" },
+        { "id": "classical-dance", "label": "Classical Dance Forms of India", "path": "painting-performing-arts-literature/classical-dance.html", "status": "planned" },
+        { "id": "folk-tribal-dance", "label": "Folk, Tribal and Regional Dance Traditions", "path": "painting-performing-arts-literature/folk-tribal-dance.html", "status": "planned" },
+        { "id": "theatre-puppetry", "label": "Indian Theatre, Puppetry and Traditional Performance", "path": "painting-performing-arts-literature/theatre-puppetry.html", "status": "planned" },
+        { "id": "sanskrit-literature", "label": "Sanskrit Literature and Classical Literary Traditions", "path": "painting-performing-arts-literature/sanskrit-literature.html", "status": "planned" },
+        { "id": "classical-language-literature", "label": "Tamil and Other Classical Language Literatures", "path": "painting-performing-arts-literature/classical-language-literature.html", "status": "planned" },
+        { "id": "bhakti-sufi-literature", "label": "Medieval Bhakti and Sufi Literature", "path": "painting-performing-arts-literature/bhakti-sufi-literature.html", "status": "planned" },
+        { "id": "modern-indian-literature", "label": "Modern Indian Literature and Literary Movements", "path": "painting-performing-arts-literature/modern-indian-literature.html", "status": "planned" },
+        { "id": "crafts-textiles-traditional-knowledge", "label": "Handicrafts, Textiles, Pottery and Traditional Knowledge Systems", "path": "painting-performing-arts-literature/crafts-textiles-traditional-knowledge.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "ancient-history",
+      "number": "04",
+      "label": "Ancient Indian History",
+      "path": "ancient-history/index.html",
+      "description": "Prehistoric cultures, the Indus civilisation, Vedic society, states, religions, empires and ancient achievements.",
+      "explanation": "Understand the political, social, economic, religious and cultural development of the Indian subcontinent from early human settlement through the Gupta period.",
+      "studyGuidance": [
+        "Build a chronological framework of prehistoric and ancient cultures.",
+        "Study major archaeological sites, sources, dynasties and personalities.",
+        "Connect political history with society, economy, religion and culture.",
+        "Compare major religious, philosophical, scientific and intellectual developments."
+      ],
+      "examRelevance": "Emphasise chronology, archaeological evidence, sites, inscriptions, texts, rulers, institutions, religious ideas and cultural achievements.",
+      "chapters": [
+        { "id": "prehistoric-india", "label": "Prehistoric India: Palaeolithic, Mesolithic and Neolithic Cultures", "path": "ancient-history/prehistoric-india.html", "status": "planned" },
+        { "id": "chalcolithic-cultures", "label": "Chalcolithic Cultures and Early Settlements", "path": "ancient-history/chalcolithic-cultures.html", "status": "planned" },
+        { "id": "indus-origins-sites", "label": "Indus Valley Civilisation: Origins, Sites and Features", "path": "ancient-history/indus-origins-sites.html", "status": "planned" },
+        { "id": "indus-society-economy", "label": "Indus Valley Civilisation: Economy, Society, Religion and Decline", "path": "ancient-history/indus-society-economy.html", "status": "planned" },
+        { "id": "vedic-age", "label": "Vedic Age: Early and Later Vedic Society", "path": "ancient-history/vedic-age.html", "status": "planned" },
+        { "id": "mahajanapadas-magadha", "label": "Mahajanapadas and the Rise of Magadha", "path": "ancient-history/mahajanapadas-magadha.html", "status": "planned" },
+        { "id": "jainism-buddhism", "label": "Jainism and Buddhism: Origins and Teachings", "path": "ancient-history/jainism-buddhism.html", "status": "planned" },
+        { "id": "mauryan-empire", "label": "Mauryan Empire: Administration, Economy and Society", "path": "ancient-history/mauryan-empire.html", "status": "planned" },
+        { "id": "ashoka-mauryan-decline", "label": "Ashoka, Dhamma and Mauryan Decline", "path": "ancient-history/ashoka-mauryan-decline.html", "status": "planned" },
+        { "id": "post-mauryan-india", "label": "Post-Mauryan India: Indo-Greeks, Shakas, Kushanas and Satavahanas", "path": "ancient-history/post-mauryan-india.html", "status": "planned" },
+        { "id": "sangam-age", "label": "Sangam Age and Early South Indian Kingdoms", "path": "ancient-history/sangam-age.html", "status": "planned" },
+        { "id": "gupta-empire", "label": "Gupta Empire: Political, Social and Economic Developments", "path": "ancient-history/gupta-empire.html", "status": "planned" },
+        { "id": "ancient-science-education", "label": "Science, Technology, Education and Intellectual Achievements", "path": "ancient-history/ancient-science-education.html", "status": "planned" },
+        { "id": "ancient-religion-society-culture", "label": "Religion, Society and Cultural Developments in Ancient India", "path": "ancient-history/ancient-religion-society-culture.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "early-medieval-history",
+      "number": "05",
+      "label": "Early Medieval India",
+      "path": "early-medieval-history/index.html",
+      "description": "The transition to medieval India, regional kingdoms, agrarian structures, trade, religion and cultural developments.",
+      "explanation": "Examine the emergence of regional political powers and the changing social, economic and cultural landscape between ancient and later medieval India.",
+      "studyGuidance": [
+        "Understand the transition from ancient political structures to regional kingdoms.",
+        "Study major dynasties of northern, southern and Deccan India.",
+        "Examine land grants, agrarian relations, trade and urban centres.",
+        "Connect regional political developments with language, religion, art and architecture."
+      ],
+      "examRelevance": "Focus on regional dynasties, chronology, administration, inscriptions, land grants, trade, religious movements and regional cultural traditions.",
+      "chapters": [
+        { "id": "transition-early-medieval", "label": "Transition from Ancient to Early Medieval India", "path": "early-medieval-history/transition-early-medieval.html", "status": "planned" },
+        { "id": "north-india-after-guptas", "label": "North India after the Guptas", "path": "early-medieval-history/north-india-after-guptas.html", "status": "planned" },
+        { "id": "harsha", "label": "Harsha and His Contemporary Kingdoms", "path": "early-medieval-history/harsha.html", "status": "planned" },
+        { "id": "rajput-states", "label": "Rajput States and Regional Political Formations", "path": "early-medieval-history/rajput-states.html", "status": "planned" },
+        { "id": "tripartite-struggle", "label": "Tripartite Struggle: Palas, Pratiharas and Rashtrakutas", "path": "early-medieval-history/tripartite-struggle.html", "status": "planned" },
+        { "id": "chalukyas-pallavas", "label": "Chalukyas, Pallavas and Deccan Political Developments", "path": "early-medieval-history/chalukyas-pallavas.html", "status": "planned" },
+        { "id": "cholas", "label": "Cholas: Administration, Economy and Maritime Expansion", "path": "early-medieval-history/cholas.html", "status": "planned" },
+        { "id": "southern-regional-kingdoms", "label": "Other Regional Kingdoms of Southern India", "path": "early-medieval-history/southern-regional-kingdoms.html", "status": "planned" },
+        { "id": "early-medieval-economy", "label": "Early Medieval Economy, Land Grants and Agrarian Relations", "path": "early-medieval-history/early-medieval-economy.html", "status": "planned" },
+        { "id": "early-medieval-society-religion", "label": "Society, Religion and the Growth of Bhakti Traditions", "path": "early-medieval-history/early-medieval-society-religion.html", "status": "planned" },
+        { "id": "regional-languages-culture", "label": "Regional Languages, Literature, Art and Architecture", "path": "early-medieval-history/regional-languages-culture.html", "status": "planned" },
+        { "id": "trade-urban-centres", "label": "Trade, Urban Centres and India's External Contacts", "path": "early-medieval-history/trade-urban-centres.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "medieval-history",
+      "number": "06",
+      "label": "Medieval Indian History",
+      "path": "medieval-history/index.html",
+      "description": "The Delhi Sultanate, regional kingdoms, Mughal Empire, Marathas, religious movements and medieval society.",
+      "explanation": "Study medieval India through political transitions, administrative systems, economic structures, religious movements and cultural synthesis.",
+      "studyGuidance": [
+        "Build a chronological understanding of the Sultanate, Mughal and regional powers.",
+        "Compare administrative, military, agrarian and revenue systems.",
+        "Study Bhakti and Sufi traditions through their major figures and regional forms.",
+        "Connect political history with architecture, literature, society and trade."
+      ],
+      "examRelevance": "Emphasise dynasties, rulers, institutions, administration, religious movements, regional powers and cultural developments.",
+      "chapters": [
+        { "id": "turkish-invasions-sultanate", "label": "Turkish Invasions and Establishment of the Delhi Sultanate", "path": "medieval-history/turkish-invasions-sultanate.html", "status": "planned" },
+        { "id": "delhi-sultanate-dynasties", "label": "Delhi Sultanate: Dynasties and Political Developments", "path": "medieval-history/delhi-sultanate-dynasties.html", "status": "planned" },
+        { "id": "sultanate-administration-economy", "label": "Delhi Sultanate: Administration, Economy and Military Organisation", "path": "medieval-history/sultanate-administration-economy.html", "status": "planned" },
+        { "id": "vijayanagara", "label": "Regional Kingdoms and the Vijayanagara Empire", "path": "medieval-history/vijayanagara.html", "status": "planned" },
+        { "id": "bahmani-deccan-sultanates", "label": "Bahmani Kingdom and Deccan Sultanates", "path": "medieval-history/bahmani-deccan-sultanates.html", "status": "planned" },
+        { "id": "mughal-establishment-expansion", "label": "Mughal Empire: Establishment and Expansion", "path": "medieval-history/mughal-establishment-expansion.html", "status": "planned" },
+        { "id": "mughal-administration", "label": "Mughal Administration, Mansabdari and Jagirdari Systems", "path": "medieval-history/mughal-administration.html", "status": "planned" },
+        { "id": "mughal-economy-society", "label": "Mughal Economy, Agriculture, Trade and Urbanisation", "path": "medieval-history/mughal-economy-society.html", "status": "planned" },
+        { "id": "mughal-culture-religion", "label": "Mughal Society, Religion and Cultural Developments", "path": "medieval-history/mughal-culture-religion.html", "status": "planned" },
+        { "id": "marathas", "label": "Marathas: Rise, Administration and Expansion", "path": "medieval-history/marathas.html", "status": "planned" },
+        { "id": "sikhism-sikh-polity", "label": "Sikhism and Sikh Political Development", "path": "medieval-history/sikhism-sikh-polity.html", "status": "planned" },
+        { "id": "regional-powers-eighteenth-century", "label": "Other Regional Powers and Eighteenth-Century Political Change", "path": "medieval-history/regional-powers-eighteenth-century.html", "status": "planned" },
+        { "id": "bhakti-movement", "label": "Bhakti Movement: Saints, Sects and Regional Traditions", "path": "medieval-history/bhakti-movement.html", "status": "planned" },
+        { "id": "sufism", "label": "Sufism: Orders, Teachings and Social Influence", "path": "medieval-history/sufism.html", "status": "planned" },
+        { "id": "medieval-art-science", "label": "Medieval Indian Art, Architecture, Literature and Science", "path": "medieval-history/medieval-art-science.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "modern-india-foundations",
+      "number": "07",
+      "label": "Modern India: Foundations and Colonial Expansion",
+      "path": "modern-india-foundations/index.html",
+      "description": "Eighteenth-century India, European trading companies, British expansion, colonial administration and the Revolt of 1857.",
+      "explanation": "Trace the establishment of British power and the political, economic and social transformations that reshaped India before 1857.",
+      "studyGuidance": [
+        "Understand the political conditions of eighteenth-century India.",
+        "Trace the expansion of European commercial and territorial power.",
+        "Study colonial administrative and revenue arrangements.",
+        "Analyse economic change, resistance and the causes of the Revolt of 1857."
+      ],
+      "examRelevance": "Focus on chronology, battles, treaties, governors, revenue systems, colonial policies, resistance movements and the nature of 1857.",
+      "chapters": [
+        { "id": "india-eighteenth-century", "label": "India in the Eighteenth Century: Political and Economic Conditions", "path": "modern-india-foundations/india-eighteenth-century.html", "status": "planned" },
+        { "id": "decline-mughal-regional-powers", "label": "Decline of the Mughal Empire and Rise of Regional Powers", "path": "modern-india-foundations/decline-mughal-regional-powers.html", "status": "planned" },
+        { "id": "european-companies", "label": "European Trading Companies in India", "path": "modern-india-foundations/european-companies.html", "status": "planned" },
+        { "id": "carnatic-wars-bengal", "label": "British Expansion: Carnatic Wars and Bengal", "path": "modern-india-foundations/carnatic-wars-bengal.html", "status": "planned" },
+        { "id": "plassey-buxar", "label": "Plassey, Buxar and Establishment of British Rule", "path": "modern-india-foundations/plassey-buxar.html", "status": "planned" },
+        { "id": "subsidiary-alliance-doctrine-lapse", "label": "Subsidiary Alliance and Doctrine of Lapse", "path": "modern-india-foundations/subsidiary-alliance-doctrine-lapse.html", "status": "planned" },
+        { "id": "british-administration-judiciary", "label": "British Administrative and Judicial Changes", "path": "modern-india-foundations/british-administration-judiciary.html", "status": "planned" },
+        { "id": "land-revenue-systems", "label": "Land Revenue Systems and Agrarian Transformation", "path": "modern-india-foundations/land-revenue-systems.html", "status": "planned" },
+        { "id": "colonial-economic-policies", "label": "Colonial Economic Policies and Deindustrialisation", "path": "modern-india-foundations/colonial-economic-policies.html", "status": "planned" },
+        { "id": "early-peasant-tribal-resistance", "label": "Tribal, Peasant and Popular Resistance before 1857", "path": "modern-india-foundations/early-peasant-tribal-resistance.html", "status": "planned" },
+        { "id": "early-socio-religious-reform", "label": "Early Socio-Religious Reform Movements", "path": "modern-india-foundations/early-socio-religious-reform.html", "status": "planned" },
+        { "id": "revolt-of-1857", "label": "Revolt of 1857: Causes, Nature, Spread and Consequences", "path": "modern-india-foundations/revolt-of-1857.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "modern-india-colonial-rule",
+      "number": "08",
+      "label": "Modern India: Colonial Rule and Resistance",
+      "path": "modern-india-colonial-rule/index.html",
+      "description": "Colonial rule after 1857, economic and social change, reform movements and the emergence of Indian nationalism up to 1919.",
+      "explanation": "Understand the changing character of colonial rule and the social, intellectual and political developments that prepared the ground for mass nationalism.",
+      "studyGuidance": [
+        "Study the political and administrative consequences of Crown rule.",
+        "Examine colonial economic policies and their effects on Indian society.",
+        "Trace reform movements, education, the press and public opinion.",
+        "Understand the emergence and evolution of organised nationalism."
+      ],
+      "examRelevance": "Focus on reformers, organisations, newspapers, movements, political methods, colonial policies and developments leading to 1919.",
+      "chapters": [
+        { "id": "crown-rule-after-1858", "label": "Crown Rule after 1858: Administrative and Political Changes", "path": "modern-india-colonial-rule/crown-rule-after-1858.html", "status": "planned" },
+        { "id": "late-colonial-economy", "label": "Economic Impact of Colonialism in the Late Nineteenth Century", "path": "modern-india-colonial-rule/late-colonial-economy.html", "status": "planned" },
+        { "id": "socio-religious-reform-nineteenth-century", "label": "Socio-Religious Reform Movements in the Nineteenth Century", "path": "modern-india-colonial-rule/socio-religious-reform-nineteenth-century.html", "status": "planned" },
+        { "id": "education-press-public-opinion", "label": "Education, Press and Growth of Public Opinion", "path": "modern-india-colonial-rule/education-press-public-opinion.html", "status": "planned" },
+        { "id": "late-nineteenth-century-resistance", "label": "Peasant and Tribal Movements in the Late Nineteenth Century", "path": "modern-india-colonial-rule/late-nineteenth-century-resistance.html", "status": "planned" },
+        { "id": "formation-congress", "label": "Formation of the Indian National Congress", "path": "modern-india-colonial-rule/formation-congress.html", "status": "planned" },
+        { "id": "moderate-nationalism", "label": "Moderate Nationalism: Ideas, Leaders and Methods", "path": "modern-india-colonial-rule/moderate-nationalism.html", "status": "planned" },
+        { "id": "extremist-nationalism", "label": "Extremist Nationalism and the Swadeshi Movement", "path": "modern-india-colonial-rule/extremist-nationalism.html", "status": "planned" },
+        { "id": "revolutionary-nationalism-early", "label": "Revolutionary Nationalism in India and Abroad", "path": "modern-india-colonial-rule/revolutionary-nationalism-early.html", "status": "planned" },
+        { "id": "partition-bengal", "label": "Partition of Bengal and the Anti-Partition Movement", "path": "modern-india-colonial-rule/partition-bengal.html", "status": "planned" },
+        { "id": "muslim-political-mobilisation", "label": "Muslim Political Mobilisation and Formation of the Muslim League", "path": "modern-india-colonial-rule/muslim-political-mobilisation.html", "status": "planned" },
+        { "id": "home-rule-lucknow-pact", "label": "Home Rule Movement and the Lucknow Pact", "path": "modern-india-colonial-rule/home-rule-lucknow-pact.html", "status": "planned" },
+        { "id": "first-world-war-india", "label": "First World War and Its Impact on Indian Politics", "path": "modern-india-colonial-rule/first-world-war-india.html", "status": "planned" },
+        { "id": "gandhian-entry-early-satyagraha", "label": "Gandhian Entry into Indian Politics and Early Satyagrahas", "path": "modern-india-colonial-rule/gandhian-entry-early-satyagraha.html", "status": "planned" },
+        { "id": "constitutional-developments-to-1919", "label": "Government Policies and Constitutional Developments up to 1919", "path": "modern-india-colonial-rule/constitutional-developments-to-1919.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "freedom-struggle",
+      "number": "09",
+      "label": "Indian National Movement and Freedom Struggle",
+      "path": "freedom-struggle/index.html",
+      "description": "The mass national movement, revolutionary activities, regional contributions, social movements and the final phase of independence.",
+      "explanation": "Study the freedom struggle as a diverse, multi-stage movement involving political organisations, popular mobilisation, social groups and regional leaders.",
+      "studyGuidance": [
+        "Study the major phases of the national movement in chronological order.",
+        "Compare Gandhian methods, constitutional politics, revolutionary activities and left movements.",
+        "Give particular attention to women, peasants, workers, tribal communities and regional contributions.",
+        "Connect the final phase of the struggle with Partition and the transfer of power."
+      ],
+      "examRelevance": "Focus on stages, personalities, organisations, methods, regional participation, causes and consequences of major movements.",
+      "chapters": [
+        { "id": "rowlatt-jallianwala", "label": "Rowlatt Act, Jallianwala Bagh and the Political Context of 1919", "path": "freedom-struggle/rowlatt-jallianwala.html", "status": "planned" },
+        { "id": "non-cooperation-khilafat", "label": "Non-Cooperation and Khilafat Movements", "path": "freedom-struggle/non-cooperation-khilafat.html", "status": "planned" },
+        { "id": "swarajists-constructive-work", "label": "Swarajists, Constructive Work and Political Developments", "path": "freedom-struggle/swarajists-constructive-work.html", "status": "planned" },
+        { "id": "simon-commission-nehru-report", "label": "Simon Commission, Nehru Report and Constitutional Debates", "path": "freedom-struggle/simon-commission-nehru-report.html", "status": "planned" },
+        { "id": "civil-disobedience-salt", "label": "Civil Disobedience Movement and Salt Satyagraha", "path": "freedom-struggle/civil-disobedience-salt.html", "status": "planned" },
+        { "id": "round-table-conferences-1935-act", "label": "Round Table Conferences and Government of India Act, 1935", "path": "freedom-struggle/round-table-conferences-1935-act.html", "status": "planned" },
+        { "id": "peasant-worker-tribal-movements", "label": "Peasant, Worker and Tribal Movements during the National Movement", "path": "freedom-struggle/peasant-worker-tribal-movements.html", "status": "planned" },
+        { "id": "revolutionary-organisations", "label": "Revolutionary Organisations and Activities in the 1920s and 1930s", "path": "freedom-struggle/revolutionary-organisations.html", "status": "planned" },
+        { "id": "subhas-bose-ina", "label": "Subhas Chandra Bose, INA and Overseas Nationalist Activities", "path": "freedom-struggle/subhas-bose-ina.html", "status": "planned" },
+        { "id": "left-movements", "label": "Left Movements, Socialists and Communists in the Freedom Struggle", "path": "freedom-struggle/left-movements.html", "status": "planned" },
+        { "id": "women-freedom-struggle", "label": "Role of Women in the National Movement", "path": "freedom-struggle/women-freedom-struggle.html", "status": "planned" },
+        { "id": "regional-freedom-struggle", "label": "Regional Contributions: North, South, East and West India", "path": "freedom-struggle/regional-freedom-struggle.html", "status": "planned" },
+        { "id": "northeast-frontier-freedom-struggle", "label": "Northeast India and Frontier Region Contributions", "path": "freedom-struggle/northeast-frontier-freedom-struggle.html", "status": "planned" },
+        { "id": "quit-india-movement", "label": "Quit India Movement and the Final Phase of British Rule", "path": "freedom-struggle/quit-india-movement.html", "status": "planned" },
+        { "id": "partition-independence", "label": "Partition, Independence and the Transfer of Power", "path": "freedom-struggle/partition-independence.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "post-independence-integration",
+      "number": "10",
+      "label": "Post-Independence India: Integration and Nation-Building",
+      "path": "post-independence-integration/index.html",
+      "description": "The immediate challenges of independence, Partition, integration of princely states and early nation-building.",
+      "explanation": "Understand how political integration, refugee rehabilitation and institution-building helped consolidate the newly independent Indian Union.",
+      "studyGuidance": [
+        "Begin with the political and humanitarian challenges at independence.",
+        "Study the integration of princely states and the roles of key leaders.",
+        "Examine refugee rehabilitation and early administrative consolidation.",
+        "Connect early nation-building with questions of identity, unity and diversity."
+      ],
+      "examRelevance": "Focus on key events, personalities, integration cases, political decisions and the consequences of Partition.",
+      "chapters": [
+        { "id": "challenges-at-independence", "label": "Challenges before India at Independence", "path": "post-independence-integration/challenges-at-independence.html", "status": "planned" },
+        { "id": "partition-consequences", "label": "Partition: Causes, Consequences and Human Impact", "path": "post-independence-integration/partition-consequences.html", "status": "planned" },
+        { "id": "integration-princely-states", "label": "Integration of Princely States: Strategies and Key Developments", "path": "post-independence-integration/integration-princely-states.html", "status": "planned" },
+        { "id": "hyderabad-junagadh-kashmir", "label": "Hyderabad, Junagadh, Kashmir and Other Integration Cases", "path": "post-independence-integration/hyderabad-junagadh-kashmir.html", "status": "planned" },
+        { "id": "patel-integration", "label": "Sardar Vallabhbhai Patel and the Integration Process", "path": "post-independence-integration/patel-integration.html", "status": "planned" },
+        { "id": "refugee-rehabilitation", "label": "Refugee Rehabilitation and Resettlement", "path": "post-independence-integration/refugee-rehabilitation.html", "status": "planned" },
+        { "id": "administrative-consolidation", "label": "Reorganisation of Administrative and Political Institutions", "path": "post-independence-integration/administrative-consolidation.html", "status": "planned" },
+        { "id": "nation-building-identity", "label": "Early Nation-Building: National Identity and Unity", "path": "post-independence-integration/nation-building-identity.html", "status": "planned" },
+        { "id": "early-language-question", "label": "Linguistic Diversity and the Early Language Question", "path": "post-independence-integration/early-language-question.html", "status": "planned" },
+        { "id": "early-development-institutions", "label": "Early Developmental Priorities and Institution-Building", "path": "post-independence-integration/early-development-institutions.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "post-independence-reorganisation",
+      "number": "11",
+      "label": "Post-Independence India: Reorganisation and Transformation",
+      "path": "post-independence-reorganisation/index.html",
+      "description": "Linguistic and territorial reorganisation, regional aspirations, land reforms and major transformations after independence.",
+      "explanation": "Examine the continuing process of political and territorial consolidation and the social changes that shaped post-independence India.",
+      "studyGuidance": [
+        "Understand the demand for linguistic states and the reorganisation process.",
+        "Study the formation of new states and territorial changes.",
+        "Examine regional aspirations, autonomy movements and national integration.",
+        "Connect post-independence developments with changes in rural society and national identity."
+      ],
+      "examRelevance": "Focus on commissions, state formation, regional movements, major developments and their consequences for national integration.",
+      "chapters": [
+        { "id": "linguistic-reorganisation", "label": "Linguistic Reorganisation of States", "path": "post-independence-reorganisation/linguistic-reorganisation.html", "status": "planned" },
+        { "id": "states-reorganisation-commission", "label": "States Reorganisation Commission and States Reorganisation Act", "path": "post-independence-reorganisation/states-reorganisation-commission.html", "status": "planned" },
+        { "id": "formation-new-states", "label": "Formation of New States and Changes in India's Political Map", "path": "post-independence-reorganisation/formation-new-states.html", "status": "planned" },
+        { "id": "northeast-reorganisation", "label": "Integration and Reorganisation in the Northeast", "path": "post-independence-reorganisation/northeast-reorganisation.html", "status": "planned" },
+        { "id": "goa-sikkim-territorial-changes", "label": "Goa, Sikkim and Other Territorial Changes", "path": "post-independence-reorganisation/goa-sikkim-territorial-changes.html", "status": "planned" },
+        { "id": "regional-aspirations-autonomy", "label": "Regional Aspirations, Autonomy Movements and National Integration", "path": "post-independence-reorganisation/regional-aspirations-autonomy.html", "status": "planned" },
+        { "id": "social-political-transformations", "label": "Major Social and Political Transformations after Independence", "path": "post-independence-reorganisation/social-political-transformations.html", "status": "planned" },
+        { "id": "land-reforms-rural-society", "label": "Land Reforms and Changes in Rural Society", "path": "post-independence-reorganisation/land-reforms-rural-society.html", "status": "planned" },
+        { "id": "cultural-linguistic-identity", "label": "Evolution of India's Cultural and Linguistic Identity", "path": "post-independence-reorganisation/cultural-linguistic-identity.html", "status": "planned" },
+        { "id": "national-integration-challenges", "label": "Challenges to National Integration and Unity", "path": "post-independence-reorganisation/national-integration-challenges.html", "status": "planned" },
+        { "id": "post-independence-contemporary", "label": "Post-Independence Developments up to Contemporary India", "path": "post-independence-reorganisation/post-independence-contemporary.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "world-history-revolutions",
+      "number": "12",
+      "label": "World History: Revolutions and Industrialisation",
+      "path": "world-history-revolutions/index.html",
+      "description": "The Enlightenment, political revolutions, industrialisation, nationalism and major transformations of the eighteenth and nineteenth centuries.",
+      "explanation": "Understand the emergence of the modern world through political revolutions, industrial change and the spread of new social and political ideas.",
+      "studyGuidance": [
+        "Study the intellectual background to modern political revolutions.",
+        "Compare the causes, course and consequences of major revolutions.",
+        "Trace the Industrial Revolution and its spread across regions.",
+        "Connect industrialisation with urbanisation, class relations and nationalism."
+      ],
+      "examRelevance": "Focus on causes, chronology, personalities, ideologies, technological change and long-term social and political consequences.",
+      "chapters": [
+        { "id": "enlightenment-modernity", "label": "The Enlightenment and Intellectual Foundations of Modernity", "path": "world-history-revolutions/enlightenment-modernity.html", "status": "planned" },
+        { "id": "american-revolution", "label": "American Revolution: Causes, Events and Consequences", "path": "world-history-revolutions/american-revolution.html", "status": "planned" },
+        { "id": "french-revolution", "label": "French Revolution: Causes, Phases and Impact", "path": "world-history-revolutions/french-revolution.html", "status": "planned" },
+        { "id": "napoleonic-era", "label": "Napoleonic Era and Its Influence on Europe", "path": "world-history-revolutions/napoleonic-era.html", "status": "planned" },
+        { "id": "industrial-revolution-origins", "label": "Industrial Revolution: Origins and Technological Changes", "path": "world-history-revolutions/industrial-revolution-origins.html", "status": "planned" },
+        { "id": "spread-industrialisation", "label": "Spread of Industrialisation across Europe and the World", "path": "world-history-revolutions/spread-industrialisation.html", "status": "planned" },
+        { "id": "industrialisation-consequences", "label": "Social and Economic Consequences of Industrialisation", "path": "world-history-revolutions/industrialisation-consequences.html", "status": "planned" },
+        { "id": "agrarian-urban-working-class", "label": "Agrarian Change, Urbanisation and the Working Class", "path": "world-history-revolutions/agrarian-urban-working-class.html", "status": "planned" },
+        { "id": "european-revolutions-1830-1848", "label": "Revolutions of 1830 and 1848 in Europe", "path": "world-history-revolutions/european-revolutions-1830-1848.html", "status": "planned" },
+        { "id": "unification-italy-germany", "label": "Unification of Italy and Germany", "path": "world-history-revolutions/unification-italy-germany.html", "status": "planned" },
+        { "id": "meiji-restoration", "label": "Meiji Restoration and Modernisation of Japan", "path": "world-history-revolutions/meiji-restoration.html", "status": "planned" },
+        { "id": "modern-nationalism-europe", "label": "Rise of Modern Nationalism in Europe", "path": "world-history-revolutions/modern-nationalism-europe.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "world-history-world-wars",
+      "number": "13",
+      "label": "World History: World Wars and the Modern World",
+      "path": "world-history-world-wars/index.html",
+      "description": "The First and Second World Wars, revolutions, interwar developments, changing boundaries and the emergence of the modern world order.",
+      "explanation": "Analyse the causes and consequences of global conflicts and the political, economic and social transformations that followed.",
+      "studyGuidance": [
+        "Understand the imperial and nationalist rivalries behind the First World War.",
+        "Study the Russian Revolution and the interwar political and economic crises.",
+        "Trace the rise of fascism, Nazism and militarism before the Second World War.",
+        "Examine the human consequences, territorial changes and post-war order."
+      ],
+      "examRelevance": "Focus on causes, major events, treaties, personalities, ideological developments, territorial changes and global consequences.",
+      "chapters": [
+        { "id": "background-first-world-war", "label": "Imperial Rivalries and Background to the First World War", "path": "world-history-world-wars/background-first-world-war.html", "status": "planned" },
+        { "id": "first-world-war", "label": "First World War: Causes, Course and Major Events", "path": "world-history-world-wars/first-world-war.html", "status": "planned" },
+        { "id": "versailles-consequences", "label": "First World War: Consequences and Treaty of Versailles", "path": "world-history-world-wars/versailles-consequences.html", "status": "planned" },
+        { "id": "russian-revolution", "label": "Russian Revolution: Causes, Phases and Consequences", "path": "world-history-world-wars/russian-revolution.html", "status": "planned" },
+        { "id": "interwar-league-nations", "label": "Interwar Period and the League of Nations", "path": "world-history-world-wars/interwar-league-nations.html", "status": "planned" },
+        { "id": "great-depression", "label": "Great Depression: Causes and Global Consequences", "path": "world-history-world-wars/great-depression.html", "status": "planned" },
+        { "id": "fascism-nazism", "label": "Rise of Fascism in Italy and Nazism in Germany", "path": "world-history-world-wars/fascism-nazism.html", "status": "planned" },
+        { "id": "japanese-militarism", "label": "Militarism in Japan and the Road to the Second World War", "path": "world-history-world-wars/japanese-militarism.html", "status": "planned" },
+        { "id": "second-world-war", "label": "Second World War: Causes, Course and Major Turning Points", "path": "world-history-world-wars/second-world-war.html", "status": "planned" },
+        { "id": "second-world-war-consequences", "label": "Second World War: Human, Political and Economic Consequences", "path": "world-history-world-wars/second-world-war-consequences.html", "status": "planned" },
+        { "id": "holocaust-genocide", "label": "Holocaust, Genocide and Humanitarian Consequences", "path": "world-history-world-wars/holocaust-genocide.html", "status": "planned" },
+        { "id": "redrawing-national-boundaries", "label": "Redrawing of National Boundaries after the World Wars", "path": "world-history-world-wars/redrawing-national-boundaries.html", "status": "planned" },
+        { "id": "postwar-superpowers", "label": "Emergence of the United States and Soviet Union as Superpowers", "path": "world-history-world-wars/postwar-superpowers.html", "status": "planned" },
+        { "id": "cold-war-bipolar-world", "label": "Beginning of the Cold War and the Bipolar World", "path": "world-history-world-wars/cold-war-bipolar-world.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "world-history-colonialism",
+      "number": "14",
+      "label": "World History: Colonialism and Decolonisation",
+      "path": "world-history-colonialism/index.html",
+      "description": "European expansion, imperialism, colonial rule, anti-colonial resistance, decolonisation and postcolonial societies.",
+      "explanation": "Examine the expansion and decline of colonial empires and the political, economic and social consequences of colonialism across world regions.",
+      "studyGuidance": [
+        "Trace European expansion and the development of modern imperialism.",
+        "Compare colonial experiences across Africa, Asia and Latin America.",
+        "Study anti-colonial movements and the process of decolonisation.",
+        "Analyse the continuing political, economic and social legacies of empire."
+      ],
+      "examRelevance": "Focus on colonial powers, regions, movements, leaders, independence processes, boundary changes and postcolonial consequences.",
+      "chapters": [
+        { "id": "european-expansion-colonialism", "label": "European Exploration, Expansion and Early Colonialism", "path": "world-history-colonialism/european-expansion-colonialism.html", "status": "planned" },
+        { "id": "new-imperialism-africa", "label": "New Imperialism and the Scramble for Africa", "path": "world-history-colonialism/new-imperialism-africa.html", "status": "planned" },
+        { "id": "colonialism-asia", "label": "Colonial Rule in Asia and Southeast Asia", "path": "world-history-colonialism/colonialism-asia.html", "status": "planned" },
+        { "id": "colonialism-africa", "label": "Colonialism in Africa: Administration, Economy and Society", "path": "world-history-colonialism/colonialism-africa.html", "status": "planned" },
+        { "id": "latin-american-independence", "label": "Latin America: Colonial Legacies and Independence", "path": "world-history-colonialism/latin-american-independence.html", "status": "planned" },
+        { "id": "anti-colonial-resistance", "label": "Anti-Colonial Resistance and Nationalist Movements", "path": "world-history-colonialism/anti-colonial-resistance.html", "status": "planned" },
+        { "id": "decolonisation-after-first-world-war", "label": "Decolonisation after the First World War", "path": "world-history-colonialism/decolonisation-after-first-world-war.html", "status": "planned" },
+        { "id": "decolonisation-after-second-world-war", "label": "Decolonisation after the Second World War", "path": "world-history-colonialism/decolonisation-after-second-world-war.html", "status": "planned" },
+        { "id": "independence-asia", "label": "Independence Movements in Asia", "path": "world-history-colonialism/independence-asia.html", "status": "planned" },
+        { "id": "independence-africa", "label": "Independence Movements in Africa", "path": "world-history-colonialism/independence-africa.html", "status": "planned" },
+        { "id": "west-asia-decolonisation", "label": "West Asian Political Transformations and End of Colonial Rule", "path": "world-history-colonialism/west-asia-decolonisation.html", "status": "planned" },
+        { "id": "partition-migration-boundaries", "label": "Partition, Migration and Boundary Changes during Decolonisation", "path": "world-history-colonialism/partition-migration-boundaries.html", "status": "planned" },
+        { "id": "postcolonial-legacies", "label": "Consequences of Colonialism for Postcolonial Societies", "path": "world-history-colonialism/postcolonial-legacies.html", "status": "planned" },
+        { "id": "neo-colonialism", "label": "Neo-Colonialism and the Continuing Legacy of Empire", "path": "world-history-colonialism/neo-colonialism.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "world-history-ideologies",
+      "number": "15",
+      "label": "World History: Political Ideologies and Global Transformations",
+      "path": "world-history-ideologies/index.html",
+      "description": "Capitalism, socialism, communism, liberalism, nationalism, authoritarian ideologies and global political transformations.",
+      "explanation": "Understand the major political philosophies identified in the GS-I syllabus and how their different forms shaped modern states and societies.",
+      "studyGuidance": [
+        "Study the origins and core principles of major political and economic ideologies.",
+        "Compare capitalism, socialism and communism and their different historical forms.",
+        "Examine the relationship between ideology, revolution, nationalism and state power.",
+        "Connect ideological competition with the Cold War and post-Cold War transformations."
+      ],
+      "examRelevance": "Focus on thinkers, concepts, historical examples, ideological differences and the effects of political philosophies on societies.",
+      "chapters": [
+        { "id": "liberalism", "label": "Liberalism and the Development of Modern Political Thought", "path": "world-history-ideologies/liberalism.html", "status": "planned" },
+        { "id": "capitalism", "label": "Capitalism: Origins, Expansion and Social Consequences", "path": "world-history-ideologies/capitalism.html", "status": "planned" },
+        { "id": "socialism", "label": "Socialism: Origins, Thinkers and Major Schools", "path": "world-history-ideologies/socialism.html", "status": "planned" },
+        { "id": "communism-marxism", "label": "Communism and Marxist Thought", "path": "world-history-ideologies/communism-marxism.html", "status": "planned" },
+        { "id": "soviet-communist-model", "label": "Russian Communism and the Soviet Model", "path": "world-history-ideologies/soviet-communist-model.html", "status": "planned" },
+        { "id": "democratic-socialism", "label": "Democratic Socialism and Welfare-State Ideas", "path": "world-history-ideologies/democratic-socialism.html", "status": "planned" },
+        { "id": "fascism-authoritarianism", "label": "Fascism, Nazism and Authoritarian Nationalism", "path": "world-history-ideologies/fascism-authoritarianism.html", "status": "planned" },
+        { "id": "nationalism-self-determination", "label": "Nationalism and Self-Determination", "path": "world-history-ideologies/nationalism-self-determination.html", "status": "planned" },
+        { "id": "imperialism-ideology", "label": "Imperialism and the Ideological Justification of Empire", "path": "world-history-ideologies/imperialism-ideology.html", "status": "planned" },
+        { "id": "anti-colonial-ideologies", "label": "Anti-Colonial Ideologies and Liberation Movements", "path": "world-history-ideologies/anti-colonial-ideologies.html", "status": "planned" },
+        { "id": "cold-war-ideological-rivalry", "label": "Cold War Ideological Rivalry and Its Social Impact", "path": "world-history-ideologies/cold-war-ideological-rivalry.html", "status": "planned" },
+        { "id": "collapse-soviet-union", "label": "Collapse of the Soviet Union and the End of the Cold War", "path": "world-history-ideologies/collapse-soviet-union.html", "status": "planned" },
+        { "id": "global-transformations-since-1991", "label": "Global Political and Social Transformations since 1991", "path": "world-history-ideologies/global-transformations-since-1991.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "indian-society-foundations",
+      "number": "16",
+      "label": "Indian Society: Foundations and Diversity",
+      "path": "indian-society-foundations/index.html",
+      "description": "The salient characteristics of Indian society, its diversity, pluralism, regional identities and social cohesion.",
+      "explanation": "Understand the foundations of Indian society and the historical, geographical, cultural and social factors that shape its diversity.",
+      "studyGuidance": [
+        "Begin with the defining characteristics of Indian society.",
+        "Study geographical, linguistic, religious, tribal and regional diversity.",
+        "Examine unity in diversity, pluralism and syncretic traditions.",
+        "Connect national identity and social cohesion with continuity and change."
+      ],
+      "examRelevance": "Focus on the salient features of Indian society, examples of diversity, pluralism, social cohesion and contemporary challenges.",
+      "chapters": [
+        { "id": "nature-indian-society", "label": "Meaning, Nature and Characteristics of Indian Society", "path": "indian-society-foundations/nature-indian-society.html", "status": "planned" },
+        { "id": "unity-in-diversity", "label": "Unity in Diversity: Historical and Contemporary Perspectives", "path": "indian-society-foundations/unity-in-diversity.html", "status": "planned" },
+        { "id": "geographical-cultural-ethnic-diversity", "label": "Geographical, Cultural and Ethnic Diversity of India", "path": "indian-society-foundations/geographical-cultural-ethnic-diversity.html", "status": "planned" },
+        { "id": "linguistic-diversity", "label": "Linguistic Diversity and Language Communities", "path": "indian-society-foundations/linguistic-diversity.html", "status": "planned" },
+        { "id": "religious-diversity", "label": "Religious Diversity and Religious Communities", "path": "indian-society-foundations/religious-diversity.html", "status": "planned" },
+        { "id": "tribal-diversity", "label": "Tribal Diversity and Indigenous Communities", "path": "indian-society-foundations/tribal-diversity.html", "status": "planned" },
+        { "id": "regional-diversity", "label": "Regional Diversity and Regional Identities", "path": "indian-society-foundations/regional-diversity.html", "status": "planned" },
+        { "id": "cultural-pluralism", "label": "Cultural Pluralism, Multiculturalism and Syncretism", "path": "indian-society-foundations/cultural-pluralism.html", "status": "planned" },
+        { "id": "national-identity-social-cohesion", "label": "National Identity and Social Cohesion", "path": "indian-society-foundations/national-identity-social-cohesion.html", "status": "planned" },
+        { "id": "continuity-change-society", "label": "Continuity and Change in Indian Society", "path": "indian-society-foundations/continuity-change-society.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "social-institutions-identities",
+      "number": "17",
+      "label": "Indian Society: Social Institutions and Identities",
+      "path": "social-institutions-identities/index.html",
+      "description": "Caste, class, tribe, family, marriage, kinship, religion, rural and urban communities and social stratification.",
+      "explanation": "Examine the institutions and relationships through which social identities, hierarchies and patterns of change are formed.",
+      "studyGuidance": [
+        "Study caste, class and tribal structures historically and in contemporary India.",
+        "Understand family, marriage, kinship and changing household patterns.",
+        "Examine rural and urban social organisation.",
+        "Analyse social mobility, exclusion, discrimination and marginalisation."
+      ],
+      "examRelevance": "Focus on social institutions, structural change, inequalities, examples and the interaction of caste, class, gender, tribe and religion.",
+      "chapters": [
+        { "id": "caste-system", "label": "Caste System: Origins, Features and Historical Evolution", "path": "social-institutions-identities/caste-system.html", "status": "planned" },
+        { "id": "caste-contemporary-india", "label": "Caste in Contemporary India and Changing Caste Relations", "path": "social-institutions-identities/caste-contemporary-india.html", "status": "planned" },
+        { "id": "class-stratification", "label": "Class Structure and Social Stratification", "path": "social-institutions-identities/class-stratification.html", "status": "planned" },
+        { "id": "tribal-society", "label": "Tribal Society: Characteristics, Diversity and Change", "path": "social-institutions-identities/tribal-society.html", "status": "planned" },
+        { "id": "family-india", "label": "Family in India: Forms, Functions and Changing Patterns", "path": "social-institutions-identities/family-india.html", "status": "planned" },
+        { "id": "marriage-kinship-households", "label": "Marriage, Kinship and Household Structures", "path": "social-institutions-identities/marriage-kinship-households.html", "status": "planned" },
+        { "id": "religion-social-institutions", "label": "Religion and Society: Social Practices and Institutions", "path": "social-institutions-identities/religion-social-institutions.html", "status": "planned" },
+        { "id": "language-identity", "label": "Language, Identity and Social Relations", "path": "social-institutions-identities/language-identity.html", "status": "planned" },
+        { "id": "rural-society", "label": "Rural Society: Structure, Communities and Transformation", "path": "social-institutions-identities/rural-society.html", "status": "planned" },
+        { "id": "urban-society", "label": "Urban Society: Social Structure and Changing Relationships", "path": "social-institutions-identities/urban-society.html", "status": "planned" },
+        { "id": "social-mobility", "label": "Social Mobility and Changing Patterns of Stratification", "path": "social-institutions-identities/social-mobility.html", "status": "planned" },
+        { "id": "social-exclusion-discrimination", "label": "Social Exclusion, Discrimination and Marginalisation", "path": "social-institutions-identities/social-exclusion-discrimination.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "women-gender-society",
+      "number": "18",
+      "label": "Women, Gender and Society",
+      "path": "women-gender-society/index.html",
+      "description": "Women's historical roles, women's organisations, gender relations, patriarchy, inequality and empowerment.",
+      "explanation": "Examine the position of women in Indian society, the evolution of women's movements and the structural factors shaping gender relations.",
+      "studyGuidance": [
+        "Trace the changing status and roles of women through Indian history.",
+        "Study women's organisations and participation in social and political movements.",
+        "Understand patriarchy, gender socialisation and intersecting inequalities.",
+        "Analyse contemporary challenges and dimensions of gender empowerment."
+      ],
+      "examRelevance": "Focus on women's organisations, social movements, gender inequality, participation, empowerment and contemporary examples.",
+      "chapters": [
+        { "id": "status-women-history", "label": "Status of Women in Ancient, Medieval and Modern India", "path": "women-gender-society/status-women-history.html", "status": "planned" },
+        { "id": "women-national-movement", "label": "Women in the Indian National Movement", "path": "women-gender-society/women-national-movement.html", "status": "planned" },
+        { "id": "women-organisations-movement", "label": "Women's Organisations and the Women's Movement in India", "path": "women-gender-society/women-organisations-movement.html", "status": "planned" },
+        { "id": "gender-constitutional-legal-context", "label": "Constitutional and Legal Context of Women's Empowerment", "path": "women-gender-society/gender-constitutional-legal-context.html", "status": "planned" },
+        { "id": "gender-socialisation-patriarchy", "label": "Gender Socialisation, Stereotypes and Patriarchy", "path": "women-gender-society/gender-socialisation-patriarchy.html", "status": "planned" },
+        { "id": "gender-inequality", "label": "Gender Inequality in Education, Health and Employment", "path": "women-gender-society/gender-inequality.html", "status": "planned" },
+        { "id": "women-economy-care-work", "label": "Women in the Economy and Unpaid Care Work", "path": "women-gender-society/women-economy-care-work.html", "status": "planned" },
+        { "id": "violence-against-women", "label": "Violence against Women and Social Responses", "path": "women-gender-society/violence-against-women.html", "status": "planned" },
+        { "id": "women-politics-leadership", "label": "Women in Politics, Leadership and Public Life", "path": "women-gender-society/women-politics-leadership.html", "status": "planned" },
+        { "id": "gender-relations-family", "label": "Changing Gender Relations and Family Structures", "path": "women-gender-society/gender-relations-family.html", "status": "planned" },
+        { "id": "intersectionality", "label": "Intersectionality: Gender, Caste, Class, Tribe and Religion", "path": "women-gender-society/intersectionality.html", "status": "planned" },
+        { "id": "gender-empowerment-challenges", "label": "Gender Empowerment and Emerging Social Challenges", "path": "women-gender-society/gender-empowerment-challenges.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "population-demography",
+      "number": "19",
+      "label": "Population, Demography and Migration",
+      "path": "population-demography/index.html",
+      "description": "Population distribution, demographic trends, fertility, mortality, migration, ageing and demographic change.",
+      "explanation": "Understand population as a changing social and geographical phenomenon and examine its implications for India's development and society.",
+      "studyGuidance": [
+        "Study population distribution, density, growth and composition.",
+        "Understand demographic transition, fertility, mortality and ageing.",
+        "Examine internal and international migration and its consequences.",
+        "Connect demographic change with employment, resources, urbanisation and social development."
+      ],
+      "examRelevance": "Focus on demographic concepts, trends, regional variations, migration patterns and their social and developmental implications.",
+      "chapters": [
+        { "id": "population-distribution-india", "label": "Population Distribution and Density in India", "path": "population-demography/population-distribution-india.html", "status": "planned" },
+        { "id": "population-growth-trends", "label": "Population Growth and Demographic Trends", "path": "population-demography/population-growth-trends.html", "status": "planned" },
+        { "id": "fertility-mortality-life-expectancy", "label": "Fertility, Mortality and Life Expectancy", "path": "population-demography/fertility-mortality-life-expectancy.html", "status": "planned" },
+        { "id": "demographic-transition", "label": "Demographic Transition and Its Stages", "path": "population-demography/demographic-transition.html", "status": "planned" },
+        { "id": "age-structure-ageing", "label": "Age Structure, Youth Bulge and Population Ageing", "path": "population-demography/age-structure-ageing.html", "status": "planned" },
+        { "id": "sex-ratio-gender-composition", "label": "Sex Ratio, Gender Composition and Related Issues", "path": "population-demography/sex-ratio-gender-composition.html", "status": "planned" },
+        { "id": "population-policy-family-planning", "label": "Population Policies and Family Planning: Social Dimensions", "path": "population-demography/population-policy-family-planning.html", "status": "planned" },
+        { "id": "internal-migration", "label": "Internal Migration: Rural-Urban and Inter-State", "path": "population-demography/internal-migration.html", "status": "planned" },
+        { "id": "international-migration-diaspora", "label": "International Migration and the Indian Diaspora", "path": "population-demography/international-migration-diaspora.html", "status": "planned" },
+        { "id": "migration-urban-social-change", "label": "Migration, Urban Growth and Social Change", "path": "population-demography/migration-urban-social-change.html", "status": "planned" },
+        { "id": "population-resource-challenges", "label": "Population Pressure and Resource Challenges", "path": "population-demography/population-resource-challenges.html", "status": "planned" },
+        { "id": "demographic-dividend", "label": "Demographic Dividend and Its Social Implications", "path": "population-demography/demographic-dividend.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "poverty-development-urbanisation",
+      "number": "20",
+      "label": "Poverty, Development and Urbanisation",
+      "path": "poverty-development-urbanisation/index.html",
+      "description": "Poverty, inequality, developmental challenges, human development, rural transformation and urbanisation.",
+      "explanation": "Study poverty and development as social processes and examine the opportunities and problems associated with rapid urban growth.",
+      "studyGuidance": [
+        "Understand poverty concepts, measurement and multidimensional causes.",
+        "Connect inequality, exclusion and human development.",
+        "Study the patterns and drivers of urbanisation in India.",
+        "Examine urban poverty, informal settlements, infrastructure and possible responses."
+      ],
+      "examRelevance": "Focus on causes, regional patterns, social consequences, urban challenges, examples and the relationship between development and inequality.",
+      "chapters": [
+        { "id": "poverty-concepts-measurement", "label": "Concept, Measurement and Dimensions of Poverty", "path": "poverty-development-urbanisation/poverty-concepts-measurement.html", "status": "planned" },
+        { "id": "poverty-india", "label": "Poverty in India: Causes, Trends and Regional Differences", "path": "poverty-development-urbanisation/poverty-india.html", "status": "planned" },
+        { "id": "poverty-inequality-exclusion", "label": "Poverty, Inequality and Social Exclusion", "path": "poverty-development-urbanisation/poverty-inequality-exclusion.html", "status": "planned" },
+        { "id": "development-social-change", "label": "Development and Social Change in India", "path": "poverty-development-urbanisation/development-social-change.html", "status": "planned" },
+        { "id": "human-development-quality-life", "label": "Human Development and Quality of Life", "path": "poverty-development-urbanisation/human-development-quality-life.html", "status": "planned" },
+        { "id": "rural-development-transformation", "label": "Rural Development and Transformation of Rural Society", "path": "poverty-development-urbanisation/rural-development-transformation.html", "status": "planned" },
+        { "id": "urbanisation-india", "label": "Urbanisation: Meaning, Patterns and Trends in India", "path": "poverty-development-urbanisation/urbanisation-india.html", "status": "planned" },
+        { "id": "cities-metropolitan-regions", "label": "Growth of Cities, Metropolitan Regions and Urban Agglomerations", "path": "poverty-development-urbanisation/cities-metropolitan-regions.html", "status": "planned" },
+        { "id": "urban-poverty-slums", "label": "Urban Poverty, Informal Settlements and Slums", "path": "poverty-development-urbanisation/urban-poverty-slums.html", "status": "planned" },
+        { "id": "urban-infrastructure-quality-life", "label": "Urban Infrastructure and Quality-of-Life Challenges", "path": "poverty-development-urbanisation/urban-infrastructure-quality-life.html", "status": "planned" },
+        { "id": "migration-informal-employment", "label": "Migration, Informal Employment and Urban Social Change", "path": "poverty-development-urbanisation/migration-informal-employment.html", "status": "planned" },
+        { "id": "urbanisation-problems-responses", "label": "Problems of Urbanisation and Sustainable Urban Communities", "path": "poverty-development-urbanisation/urbanisation-problems-responses.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "globalisation-society",
+      "number": "21",
+      "label": "Globalisation and Indian Society",
+      "path": "globalisation-society/index.html",
+      "description": "The effects of economic, cultural and technological globalisation on Indian society and social relationships.",
+      "explanation": "Analyse how global connections reshape Indian culture, identities, families, work, aspirations, inequality and everyday life.",
+      "studyGuidance": [
+        "Understand the dimensions and drivers of globalisation.",
+        "Examine cultural, social, economic and technological effects.",
+        "Study changes in family, gender relations, youth, employment and lifestyles.",
+        "Balance the benefits of global integration against inequality and social disruption."
+      ],
+      "examRelevance": "Focus on the effects of globalisation on Indian society, supported by examples, balanced analysis and contemporary developments.",
+      "chapters": [
+        { "id": "globalisation-meaning-dimensions", "label": "Meaning, Dimensions and Drivers of Globalisation", "path": "globalisation-society/globalisation-meaning-dimensions.html", "status": "planned" },
+        { "id": "historical-globalisation", "label": "Historical Evolution of Globalisation", "path": "globalisation-society/historical-globalisation.html", "status": "planned" },
+        { "id": "economic-globalisation-social-effects", "label": "Economic Globalisation and Its Social Effects", "path": "globalisation-society/economic-globalisation-social-effects.html", "status": "planned" },
+        { "id": "cultural-globalisation", "label": "Cultural Globalisation and Cultural Homogenisation", "path": "globalisation-society/cultural-globalisation.html", "status": "planned" },
+        { "id": "globalisation-traditions-identity", "label": "Globalisation and Indian Traditions, Values and Identity", "path": "globalisation-society/globalisation-traditions-identity.html", "status": "planned" },
+        { "id": "globalisation-family-kinship", "label": "Globalisation and Family, Marriage and Kinship", "path": "globalisation-society/globalisation-family-kinship.html", "status": "planned" },
+        { "id": "globalisation-women", "label": "Globalisation and Women", "path": "globalisation-society/globalisation-women.html", "status": "planned" },
+        { "id": "globalisation-youth", "label": "Globalisation and Youth", "path": "globalisation-society/globalisation-youth.html", "status": "planned" },
+        { "id": "globalisation-employment-work", "label": "Globalisation, Employment and Changing Work Patterns", "path": "globalisation-society/globalisation-employment-work.html", "status": "planned" },
+        { "id": "media-digital-social-change", "label": "Media, Communication and Digital Social Change", "path": "globalisation-society/media-digital-social-change.html", "status": "planned" },
+        { "id": "consumerism-lifestyle", "label": "Consumerism, Lifestyle Changes and Aspirations", "path": "globalisation-society/consumerism-lifestyle.html", "status": "planned" },
+        { "id": "globalisation-inequality", "label": "Globalisation, Inequality and Social Exclusion", "path": "globalisation-society/globalisation-inequality.html", "status": "planned" },
+        { "id": "localisation-glocalisation", "label": "Resistance, Localisation and Glocalisation", "path": "globalisation-society/localisation-glocalisation.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "social-empowerment",
+      "number": "22",
+      "label": "Social Empowerment and Contemporary Social Issues",
+      "path": "social-empowerment/index.html",
+      "description": "Social empowerment, marginalised communities, social movements, communalism, regionalism, secularism and social harmony.",
+      "explanation": "Understand the social processes and challenges that shape inclusion, equality, identity, participation and cohesion in India.",
+      "studyGuidance": [
+        "Study social empowerment across different marginalised and vulnerable communities.",
+        "Examine major social movements and their historical and contemporary impact.",
+        "Understand communalism, regionalism and secularism as social and political phenomena.",
+        "Use contemporary examples to analyse social harmony, pluralism and national integration."
+      ],
+      "examRelevance": "Focus on causes, forms, consequences and responses relating to social empowerment, communalism, regionalism and secularism.",
+      "chapters": [
+        { "id": "social-empowerment-concepts", "label": "Meaning and Dimensions of Social Empowerment", "path": "social-empowerment/social-empowerment-concepts.html", "status": "planned" },
+        { "id": "sc-empowerment", "label": "Empowerment of Scheduled Castes and Marginalised Communities", "path": "social-empowerment/sc-empowerment.html", "status": "planned" },
+        { "id": "tribal-empowerment", "label": "Tribal Empowerment and Social Transformation", "path": "social-empowerment/tribal-empowerment.html", "status": "planned" },
+        { "id": "obc-empowerment", "label": "Empowerment of Other Backward Classes and Vulnerable Groups", "path": "social-empowerment/obc-empowerment.html", "status": "planned" },
+        { "id": "minority-communities-inclusion", "label": "Minority Communities and Social Inclusion", "path": "social-empowerment/minority-communities-inclusion.html", "status": "planned" },
+        { "id": "disability-inclusion", "label": "Disability, Inclusion and Accessibility", "path": "social-empowerment/disability-inclusion.html", "status": "planned" },
+        { "id": "social-movements-india", "label": "Social Movements in India: Origins, Types and Impact", "path": "social-empowerment/social-movements-india.html", "status": "planned" },
+        { "id": "peasant-tribal-labour-movements", "label": "Peasant, Tribal, Labour and Environmental Social Movements", "path": "social-empowerment/peasant-tribal-labour-movements.html", "status": "planned" },
+        { "id": "communalism", "label": "Communalism: Causes, Forms and Consequences", "path": "social-empowerment/communalism.html", "status": "planned" },
+        { "id": "secularism-indian-society", "label": "Secularism in Indian Society: Principles and Challenges", "path": "social-empowerment/secularism-indian-society.html", "status": "planned" },
+        { "id": "regionalism", "label": "Regionalism: Causes, Forms and Social Consequences", "path": "social-empowerment/regionalism.html", "status": "planned" },
+        { "id": "casteism-ethnic-conflicts", "label": "Casteism, Ethnic Tensions and Identity-Based Conflicts", "path": "social-empowerment/casteism-ethnic-conflicts.html", "status": "planned" },
+        { "id": "social-harmony-pluralism", "label": "Social Harmony, Pluralism and National Integration", "path": "social-empowerment/social-harmony-pluralism.html", "status": "planned" },
+        { "id": "contemporary-social-issues", "label": "Contemporary Social Issues and Changing Social Values", "path": "social-empowerment/contemporary-social-issues.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "world-physical-geography",
+      "number": "23",
+      "label": "World Physical Geography and Geophysical Processes",
+      "path": "world-physical-geography/index.html",
+      "description": "Earth structure, geomorphology, climatology, oceanography, landforms, weather systems and major geophysical phenomena.",
+      "explanation": "Understand the physical systems of the Earth, the processes that shape geographical features and the spatial distribution and effects of major natural phenomena.",
+      "studyGuidance": [
+        "Build a foundation in Earth's structure, tectonics and geological processes.",
+        "Study landform development through endogenic and exogenic processes.",
+        "Understand atmospheric circulation, climate systems and ocean processes.",
+        "Connect earthquakes, tsunamis, volcanoes and cyclones with their geographical distribution and effects."
+      ],
+      "examRelevance": "Focus on physical processes, locations, diagrams, maps, global patterns, causes and impacts of geophysical phenomena.",
+      "chapters": [
+        { "id": "origin-evolution-earth", "label": "Origin and Evolution of the Earth", "path": "world-physical-geography/origin-evolution-earth.html", "status": "planned" },
+        { "id": "interior-earth", "label": "Interior of the Earth and Geological Structure", "path": "world-physical-geography/interior-earth.html", "status": "planned" },
+        { "id": "plate-tectonics", "label": "Plate Tectonics, Continental Drift and Seafloor Spreading", "path": "world-physical-geography/plate-tectonics.html", "status": "planned" },
+        { "id": "rocks-minerals-cycle", "label": "Rocks, Minerals and the Rock Cycle", "path": "world-physical-geography/rocks-minerals-cycle.html", "status": "planned" },
+        { "id": "endogenic-forces", "label": "Endogenic Forces: Folding, Faulting and Earthquakes", "path": "world-physical-geography/endogenic-forces.html", "status": "planned" },
+        { "id": "volcanism", "label": "Volcanism: Types, Distribution and Impacts", "path": "world-physical-geography/volcanism.html", "status": "planned" },
+        { "id": "exogenic-processes", "label": "Exogenic Processes: Weathering, Erosion and Deposition", "path": "world-physical-geography/exogenic-processes.html", "status": "planned" },
+        { "id": "major-landforms", "label": "Major Landforms: Mountains, Plateaus and Plains", "path": "world-physical-geography/major-landforms.html", "status": "planned" },
+        { "id": "geomorphic-processes", "label": "Geomorphic Processes: Rivers, Glaciers, Wind and Waves", "path": "world-physical-geography/geomorphic-processes.html", "status": "planned" },
+        { "id": "atmosphere-heat-budget", "label": "Atmospheric Structure, Composition and Heat Budget", "path": "world-physical-geography/atmosphere-heat-budget.html", "status": "planned" },
+        { "id": "pressure-winds-circulation", "label": "Global Pressure Belts, Winds and Atmospheric Circulation", "path": "world-physical-geography/pressure-winds-circulation.html", "status": "planned" },
+        { "id": "air-masses-fronts-cyclones", "label": "Air Masses, Fronts, Cyclones and Anticyclones", "path": "world-physical-geography/air-masses-fronts-cyclones.html", "status": "planned" },
+        { "id": "monsoons-jet-streams-climate", "label": "Monsoons, Jet Streams and Global Climate Patterns", "path": "world-physical-geography/monsoons-jet-streams-climate.html", "status": "planned" },
+        { "id": "oceanography", "label": "Ocean Relief, Ocean Currents, Tides and Waves", "path": "world-physical-geography/oceanography.html", "status": "planned" },
+        { "id": "changing-earth-systems", "label": "Climate Change, Changing Water Bodies, Ice Caps, Flora and Fauna", "path": "world-physical-geography/changing-earth-systems.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "indian-geography",
+      "number": "24",
+      "label": "Indian Geography",
+      "path": "indian-geography/index.html",
+      "description": "India's location, physiography, drainage, climate, soils, vegetation, agriculture, resources, population and regional geography.",
+      "explanation": "Study the physical and human geography of India and understand the relationships between landforms, climate, resources, population and economic activity.",
+      "studyGuidance": [
+        "Begin with India's location, geological structure and physiographic divisions.",
+        "Study drainage, climate, soils, natural vegetation and biodiversity.",
+        "Understand the geographical distribution of agriculture and resources.",
+        "Use maps to connect regional characteristics with population, settlements and environmental change."
+      ],
+      "examRelevance": "Focus on locations, maps, river systems, climatic patterns, soils, vegetation, resource distribution and geographical causes of regional differences.",
+      "chapters": [
+        { "id": "india-location-extent", "label": "India's Location, Extent and Geographical Significance", "path": "indian-geography/india-location-extent.html", "status": "planned" },
+        { "id": "india-geology-physiography", "label": "Geological Structure and Physiographic Divisions of India", "path": "indian-geography/india-geology-physiography.html", "status": "planned" },
+        { "id": "himalayan-system", "label": "Himalayan System: Formation, Divisions and Features", "path": "indian-geography/himalayan-system.html", "status": "planned" },
+        { "id": "northern-plains-plateau-coasts", "label": "Northern Plains, Peninsular Plateau and Coastal Plains", "path": "indian-geography/northern-plains-plateau-coasts.html", "status": "planned" },
+        { "id": "indian-islands-coasts", "label": "Indian Islands and Coastal Geographical Features", "path": "indian-geography/indian-islands-coasts.html", "status": "planned" },
+        { "id": "indian-drainage-systems", "label": "Drainage Systems: Himalayan and Peninsular Rivers", "path": "indian-geography/indian-drainage-systems.html", "status": "planned" },
+        { "id": "indian-climate-monsoon", "label": "Indian Climate and the Monsoon System", "path": "indian-geography/indian-climate-monsoon.html", "status": "planned" },
+        { "id": "indian-seasons-rainfall", "label": "Seasons, Rainfall Distribution and Climatic Regions", "path": "indian-geography/indian-seasons-rainfall.html", "status": "planned" },
+        { "id": "soils-of-india", "label": "Soils of India: Formation, Types and Distribution", "path": "indian-geography/soils-of-india.html", "status": "planned" },
+        { "id": "natural-vegetation-biodiversity", "label": "Natural Vegetation, Forest Types and Biodiversity Distribution", "path": "indian-geography/natural-vegetation-biodiversity.html", "status": "planned" },
+        { "id": "indian-agriculture", "label": "Indian Agriculture: Cropping Patterns and Geographical Factors", "path": "indian-geography/indian-agriculture.html", "status": "planned" },
+        { "id": "water-resources-india", "label": "Water Resources, Groundwater and River-Basin Geography", "path": "indian-geography/water-resources-india.html", "status": "planned" },
+        { "id": "mineral-energy-resources-india", "label": "Mineral and Energy Resource Distribution in India", "path": "indian-geography/mineral-energy-resources-india.html", "status": "planned" },
+        { "id": "population-settlements-regions", "label": "Population Distribution, Settlements and Regional Geography", "path": "indian-geography/population-settlements-regions.html", "status": "planned" },
+        { "id": "geographical-changes-india", "label": "Geographical Changes in India: Glaciers, Rivers, Coasts and Ecosystems", "path": "indian-geography/geographical-changes-india.html", "status": "planned" }
+      ]
+    },
+    {
+      "id": "world-resources-economic-geography",
+      "number": "25",
+      "label": "World Resources, Human and Economic Geography",
+      "path": "world-resources-economic-geography/index.html",
+      "description": "World resource distribution, population, settlements, agriculture, mining, manufacturing, industries, transport and economic regions.",
+      "explanation": "Understand where key resources and economic activities are located and analyse the physical, human, technological and economic factors that determine their distribution.",
+      "studyGuidance": [
+        "Study the geographical distribution of major natural resources worldwide, including South Asia.",
+        "Understand population and settlement patterns at a global scale.",
+        "Compare agricultural, extractive and manufacturing systems.",
+        "Analyse the location factors of primary, secondary and tertiary activities using real-world examples."
+      ],
+      "examRelevance": "Focus on global and regional maps, resource distribution, industrial location factors, economic regions and geographical explanations.",
+      "chapters": [
+        { "id": "world-physical-regions", "label": "World Physical Regions and Major Geographical Regions", "path": "world-resources-economic-geography/world-physical-regions.html", "status": "planned" },
+        { "id": "world-population-distribution", "label": "World Population Distribution and Density", "path": "world-resources-economic-geography/world-population-distribution.html", "status": "planned" },
+        { "id": "human-settlements", "label": "Human Settlements: Rural and Urban Patterns", "path": "world-resources-economic-geography/human-settlements.html", "status": "planned" },
+        { "id": "natural-resources-classification", "label": "Natural Resources: Classification, Distribution and Use", "path": "world-resources-economic-geography/natural-resources-classification.html", "status": "planned" },
+        { "id": "land-soil-resources", "label": "Distribution of Major Land and Soil Resources", "path": "world-resources-economic-geography/land-soil-resources.html", "status": "planned" },
+        { "id": "world-water-resources", "label": "World Water Resources and Their Geographical Distribution", "path": "world-resources-economic-geography/world-water-resources.html", "status": "planned" },
+        { "id": "forests-fisheries-biological-resources", "label": "Distribution of Forests, Fisheries and Biological Resources", "path": "world-resources-economic-geography/forests-fisheries-biological-resources.html", "status": "planned" },
+        { "id": "world-mineral-resources", "label": "Distribution of Mineral Resources across the World", "path": "world-resources-economic-geography/world-mineral-resources.html", "status": "planned" },
+        { "id": "world-energy-resources", "label": "Distribution of Conventional and Renewable Energy Resources", "path": "world-resources-economic-geography/world-energy-resources.html", "status": "planned" },
+        { "id": "primary-activities", "label": "Primary Activities: Agriculture, Forestry, Fishing and Mining", "path": "world-resources-economic-geography/primary-activities.html", "status": "planned" },
+        { "id": "world-agricultural-systems", "label": "Agricultural Systems and Major Cropping Regions of the World", "path": "world-resources-economic-geography/world-agricultural-systems.html", "status": "planned" },
+        { "id": "agricultural-location-factors", "label": "Factors Influencing the Location of Agricultural Activities", "path": "world-resources-economic-geography/agricultural-location-factors.html", "status": "planned" },
+        { "id": "manufacturing-industrial-regions", "label": "Secondary Activities: Manufacturing and Industrial Regions", "path": "world-resources-economic-geography/manufacturing-industrial-regions.html", "status": "planned" },
+        { "id": "industrial-location-factors", "label": "Factors Influencing Industrial Location: Raw Materials, Labour, Energy, Markets and Transport", "path": "world-resources-economic-geography/industrial-location-factors.html", "status": "planned" },
+        { "id": "tertiary-activities-transport-trade", "label": "Tertiary Activities, Transport, Trade and Global Economic Regions", "path": "world-resources-economic-geography/tertiary-activities-transport-trade.html", "status": "planned" }
+      ]
+    }
+  ]
+}
