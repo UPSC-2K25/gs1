@@ -21,11 +21,13 @@
 
   function normalizePath(path) {
     if (!path) return "/";
+
     let value = String(path).replace(/\\/g, "/");
     value = value.split("?")[0].split("#")[0];
     value = value.replace(/\/+/g, "/");
 
     if (!value.startsWith("/")) value = `/${value}`;
+
     if (value.length > 1 && value.endsWith("/")) {
       value = value.slice(0, -1);
     }
@@ -48,7 +50,9 @@
       new URL(SITE_ROOT.href).pathname
     );
 
-    const locationPath = normalizePath(window.location.pathname);
+    const locationPath = normalizePath(
+      window.location.pathname
+    );
 
     if (rootPath === "/") return locationPath;
 
@@ -69,6 +73,7 @@
     const element = document.createElement(tag);
 
     if (className) element.className = className;
+
     if (text !== undefined && text !== null) {
       element.textContent = String(text);
     }
@@ -78,6 +83,7 @@
 
   function createLink(label, path, className) {
     const link = createElement("a", className, label);
+
     link.href = resolveSitePath(path);
 
     if (isCurrentPath(path)) {
@@ -87,8 +93,17 @@
     return link;
   }
 
+  function setText(selector, value) {
+    const element = document.querySelector(selector);
+
+    if (element && value !== undefined && value !== null) {
+      element.textContent = value;
+    }
+  }
+
   function getOrCreate(selector, parent, tag, className) {
     const existing = document.querySelector(selector);
+
     if (existing) return existing;
 
     const element = createElement(tag || "div", className);
@@ -96,13 +111,6 @@
     if (parent) parent.appendChild(element);
 
     return element;
-  }
-
-  function setText(selector, value) {
-    const element = document.querySelector(selector);
-    if (element && value !== undefined && value !== null) {
-      element.textContent = value;
-    }
   }
 
   function getPageContext() {
@@ -129,7 +137,11 @@
         };
       }
 
-      for (let index = 0; index < section.chapters.length; index++) {
+      for (
+        let index = 0;
+        index < section.chapters.length;
+        index++
+      ) {
         const chapter = section.chapters[index];
         const chapterPath = normalizePath(chapter.path);
 
@@ -156,7 +168,9 @@
 
   function validateConfig(data) {
     if (!data || typeof data !== "object") {
-      throw new Error("Navigation configuration is missing or invalid.");
+      throw new Error(
+        "Navigation configuration is missing or invalid."
+      );
     }
 
     if (!data.site || !Array.isArray(data.sections)) {
@@ -171,7 +185,9 @@
 
     data.sections.forEach((section) => {
       if (!section.id || !section.label || !section.path) {
-        throw new Error("A module is missing its id, label, or path.");
+        throw new Error(
+          "A module is missing its id, label, or path."
+        );
       }
 
       if (sectionIds.has(section.id)) {
@@ -209,7 +225,9 @@
         }
 
         if (chapterIds.has(chapter.id)) {
-          throw new Error(`Duplicate chapter id: ${chapter.id}`);
+          throw new Error(
+            `Duplicate chapter id: ${chapter.id}`
+          );
         }
 
         chapterIds.add(chapter.id);
@@ -219,8 +237,13 @@
     return data;
   }
 
+  // ---------------------------------------------------------
+  // 1. Primary header and module navigation
+  // ---------------------------------------------------------
+
   function renderHeader() {
     const header = document.querySelector("[data-site-header]");
+
     if (!header) return;
 
     header.replaceChildren();
@@ -236,13 +259,16 @@
       config.site.shortName || "GS-I"
     );
 
-    const brandText = createElement("span", "site-brand-text");
-    brandText.textContent =
-      config.site.name || "UPSC GS-I";
+    const brandText = createElement(
+      "span",
+      "site-brand-text",
+      config.site.name || "UPSC GS-I"
+    );
 
     brand.append(mark, brandText);
 
     const nav = createElement("nav", "primary-navigation");
+
     nav.setAttribute("aria-label", "Primary navigation");
 
     const homeLink = createLink(
@@ -272,8 +298,12 @@
     dropdownList.hidden = true;
 
     config.sections.forEach((section) => {
+      const label = section.number
+        ? `${section.number}. ${section.label}`
+        : section.label;
+
       const link = createLink(
-        `${section.number ? `${section.number}. ` : ""}${section.label}`,
+        label,
         section.path,
         "module-dropdown-link"
       );
@@ -289,15 +319,15 @@
     });
 
     dropdownButton.addEventListener("click", () => {
-      const isExpanded =
+      const expanded =
         dropdownButton.getAttribute("aria-expanded") === "true";
 
       dropdownButton.setAttribute(
         "aria-expanded",
-        String(!isExpanded)
+        String(!expanded)
       );
 
-      dropdownList.hidden = isExpanded;
+      dropdownList.hidden = expanded;
     });
 
     modules.append(dropdownButton, dropdownList);
@@ -307,24 +337,35 @@
 
     if (config.interface?.search !== false) {
       const search = createSearch();
+
       if (search) wrapper.appendChild(search);
     }
 
     header.appendChild(wrapper);
   }
 
+  // ---------------------------------------------------------
+  // 2. Search
+  // ---------------------------------------------------------
+
   function createSearch() {
     const wrapper = createElement("div", "site-search");
 
     const input = createElement("input", "site-search-input");
+
     input.type = "search";
     input.placeholder = "Search modules and chapters";
+
     input.setAttribute(
       "aria-label",
       "Search modules and chapters"
     );
 
-    const results = createElement("div", "site-search-results");
+    const results = createElement(
+      "div",
+      "site-search-results"
+    );
+
     results.hidden = true;
 
     const searchableItems = [];
@@ -347,6 +388,7 @@
 
     input.addEventListener("input", () => {
       const query = input.value.trim().toLowerCase();
+
       results.replaceChildren();
 
       if (!query) {
@@ -362,7 +404,11 @@
 
       if (!matches.length) {
         results.appendChild(
-          createElement("div", "search-no-results", "No results found")
+          createElement(
+            "div",
+            "search-no-results",
+            "No results found"
+          )
         );
       } else {
         matches.forEach((item) => {
@@ -393,11 +439,17 @@
     });
 
     wrapper.append(input, results);
+
     return wrapper;
   }
 
+  // ---------------------------------------------------------
+  // 3. Home page introduction and module directory
+  // ---------------------------------------------------------
+
   function renderHomeIntro() {
     const intro = document.querySelector("[data-home-intro]");
+
     if (!intro) return;
 
     const text =
@@ -417,7 +469,11 @@
 
     container.replaceChildren();
 
-    const table = createElement("table", "module-directory-table");
+    const table = createElement(
+      "table",
+      "module-directory-table"
+    );
+
     const thead = createElement("thead");
     const tbody = createElement("tbody");
     const headerRow = createElement("tr");
@@ -431,6 +487,7 @@
 
     headings.forEach((heading) => {
       const th = createElement("th", "", heading);
+
       th.scope = "col";
       headerRow.appendChild(th);
     });
@@ -447,11 +504,13 @@
       );
 
       const nameCell = createElement("td");
+
       const nameLink = createLink(
         section.label,
         section.path,
         "module-table-link"
       );
+
       nameCell.appendChild(nameLink);
 
       const descriptionCell = createElement(
@@ -480,14 +539,41 @@
     container.appendChild(table);
   }
 
+  // ---------------------------------------------------------
+  // 4. Module landing page content
+  // ---------------------------------------------------------
+
   function renderModulePage() {
     const section = pageContext.section;
+
     if (!section) return;
 
     setText("[data-page-title]", section.label);
     setText("[data-module-title]", section.label);
-    setText("[data-module-description]", section.description || "");
-    setText("[data-module-explanation]", section.explanation || "");
+    setText(
+      "[data-module-description]",
+      section.description || ""
+    );
+    setText(
+      "[data-module-explanation]",
+      section.explanation || ""
+    );
+
+    const description = document.querySelector(
+      "[data-module-description]"
+    );
+
+    if (description) {
+      description.classList.add("module-subtitle");
+    }
+
+    const explanation = document.querySelector(
+      "[data-module-explanation]"
+    );
+
+    if (explanation) {
+      explanation.classList.add("module-explanation");
+    }
 
     const guidance = document.querySelector(
       "[data-study-guidance-list]"
@@ -515,11 +601,14 @@
     if (chapterList) {
       chapterList.replaceChildren();
 
-      section.chapters.forEach((chapter, index) => {
-        const item = createElement("li", "chapter-directory-item");
+      (section.chapters || []).forEach((chapter) => {
+        const item = createElement(
+          "li",
+          "chapter-directory-item"
+        );
 
         const link = createLink(
-          `${index + 1}. ${chapter.label}`,
+          chapter.label,
           chapter.path,
           "chapter-directory-link"
         );
@@ -527,11 +616,18 @@
         item.appendChild(link);
 
         if (chapter.status) {
+          const statusLabel =
+            chapter.status === "ready"
+              ? "Available"
+              : chapter.status === "planned"
+                ? "Planned"
+                : chapter.status;
+
           item.appendChild(
             createElement(
               "span",
-              "chapter-status",
-              chapter.status
+              `chapter-status status-${chapter.status}`,
+              statusLabel
             )
           );
         }
@@ -541,21 +637,35 @@
     }
   }
 
-  function renderSidebar() {
-    const sidebar = document.querySelector(
-      "[data-secondary-navigation]"
-    );
+  // ---------------------------------------------------------
+  // 5. Secondary chapter sidebar
+  // ---------------------------------------------------------
 
-    if (!sidebar || !pageContext.section) return;
+  function renderSidebar() {
+    const interfaceConfig = config.interface || {};
 
     if (
-      config.interface?.secondaryNavigation &&
-      config.interface.secondaryNavigation !== "module-chapters"
+      !pageContext.section ||
+      interfaceConfig.secondaryNavigation !== "module-chapters"
     ) {
       return;
     }
 
+    const sidebar = getOrCreate(
+      "[data-secondary-navigation]",
+      document.body,
+      "aside",
+      "secondary-navigation"
+    );
+
     sidebar.replaceChildren();
+
+    sidebar.classList.add("secondary-navigation");
+
+    sidebar.setAttribute(
+      "aria-label",
+      "Module chapters"
+    );
 
     const heading = createElement(
       "h2",
@@ -563,68 +673,106 @@
       pageContext.section.label
     );
 
-    const list = createElement("ul", "sidebar-chapter-list");
+    const chapterList = createElement(
+      "ol",
+      "chapter-navigation-list"
+    );
 
-    pageContext.section.chapters.forEach((chapter, index) => {
-      const item = createElement("li", "sidebar-chapter-item");
+    (pageContext.section.chapters || []).forEach((chapter) => {
+      const item = createElement(
+        "li",
+        "chapter-navigation-item"
+      );
 
       const link = createLink(
-        `${index + 1}. ${chapter.label}`,
+        chapter.label,
         chapter.path,
-        "sidebar-chapter-link"
+        "chapter-navigation-link"
       );
 
       if (
-        pageContext.type === "chapter" &&
+        pageContext.chapter &&
         pageContext.chapter.id === chapter.id
       ) {
-        link.classList.add("active");
+        item.classList.add("is-active");
+
         link.setAttribute("aria-current", "page");
       }
 
       item.appendChild(link);
-      list.appendChild(item);
+      chapterList.appendChild(item);
     });
 
-    sidebar.append(heading, list);
+    sidebar.append(heading, chapterList);
   }
 
+  // ---------------------------------------------------------
+  // 6. Breadcrumbs
+  // ---------------------------------------------------------
+
   function renderBreadcrumbs() {
-    const container = document.querySelector("[data-breadcrumbs]");
+    if (config.interface?.showBreadcrumbs === false) {
+      return;
+    }
+
+    const container = document.querySelector(
+      "[data-breadcrumbs]"
+    );
+
     if (!container) return;
 
     container.replaceChildren();
 
-    const home = createLink("Home", "index.html");
-    container.appendChild(home);
+    container.classList.add("breadcrumbs");
+
+    const list = createElement("ol", "breadcrumb-list");
+
+    const homeItem = createElement(
+      "li",
+      "breadcrumb-item"
+    );
+
+    homeItem.appendChild(
+      createLink("Home", "index.html")
+    );
+
+    list.appendChild(homeItem);
 
     if (pageContext.section) {
-      container.appendChild(
-        createElement("span", "breadcrumb-separator", " / ")
+      const moduleItem = createElement(
+        "li",
+        "breadcrumb-item"
       );
 
-      const moduleLink = createLink(
-        pageContext.section.label,
-        pageContext.section.path
+      moduleItem.appendChild(
+        createLink(
+          pageContext.section.label,
+          pageContext.section.path
+        )
       );
 
-      container.appendChild(moduleLink);
+      list.appendChild(moduleItem);
     }
 
     if (pageContext.chapter) {
-      container.appendChild(
-        createElement("span", "breadcrumb-separator", " / ")
+      const chapterItem = createElement(
+        "li",
+        "breadcrumb-item breadcrumb-current"
       );
 
-      container.appendChild(
-        createElement(
-          "span",
-          "breadcrumb-current",
-          pageContext.chapter.label
-        )
-      );
+      chapterItem.textContent = pageContext.chapter.label;
+
+      chapterItem.setAttribute("aria-current", "page");
+
+      list.appendChild(chapterItem);
     }
+
+    container.appendChild(list);
   }
+
+  // ---------------------------------------------------------
+  // 7. Previous and next chapter navigation
+  // ---------------------------------------------------------
 
   function renderPreviousNext() {
     if (
@@ -648,49 +796,65 @@
     if (index > 0) {
       const previous = section.chapters[index - 1];
 
-      const link = createLink(
-        `← Previous: ${previous.label}`,
-        previous.path,
-        "chapter-previous"
+      container.appendChild(
+        createLink(
+          `← Previous: ${previous.label}`,
+          previous.path,
+          "chapter-previous"
+        )
       );
-
-      container.appendChild(link);
     } else {
       container.appendChild(
-        createElement("span", "chapter-previous disabled")
+        createElement(
+          "span",
+          "chapter-previous disabled"
+        )
       );
     }
 
     if (index < section.chapters.length - 1) {
       const next = section.chapters[index + 1];
 
-      const link = createLink(
-        `Next: ${next.label} →`,
-        next.path,
-        "chapter-next"
+      container.appendChild(
+        createLink(
+          `Next: ${next.label} →`,
+          next.path,
+          "chapter-next"
+        )
       );
-
-      container.appendChild(link);
     } else {
       container.appendChild(
-        createElement("span", "chapter-next disabled")
+        createElement(
+          "span",
+          "chapter-next disabled"
+        )
       );
     }
   }
 
+  // ---------------------------------------------------------
+  // 8. Footer
+  // ---------------------------------------------------------
+
   function renderFooter() {
-    const footer = document.querySelector("[data-site-footer]");
+    const footer = document.querySelector(
+      "[data-site-footer]"
+    );
+
     if (!footer) return;
 
     footer.replaceChildren();
 
-    const wrapper = createElement("div", "site-footer-inner");
+    const wrapper = createElement(
+      "div",
+      "site-footer-inner"
+    );
 
     const copyright = createElement(
       "p",
       "footer-copyright",
       config.site.footerText ||
-        `UPSC GS-I Knowledge System`
+        "UPSC GS-I Knowledge System"
     );
 
     const home = createLink(
@@ -700,46 +864,58 @@
     );
 
     wrapper.append(copyright, home);
+
     footer.appendChild(wrapper);
   }
+
+  // ---------------------------------------------------------
+  // 9. Page title and document title
+  // ---------------------------------------------------------
 
   function renderPageTitle() {
     const title = document.querySelector("[data-page-title]");
 
     if (pageContext.type === "home") {
-      document.title =
+      const homeTitle =
         config.site.homeTitle ||
         config.site.name ||
         "UPSC GS-I";
 
-      if (title) {
-        title.textContent =
-          config.site.homeTitle ||
-          config.site.name ||
-          "UPSC GS-I";
-      }
+      document.title = homeTitle;
+
+      if (title) title.textContent = homeTitle;
 
       return;
     }
 
     if (pageContext.type === "module") {
-      document.title =
-        `${pageContext.section.label} | ${config.site.name || "UPSC GS-I"}`;
+      const moduleTitle = pageContext.section.label;
 
-      if (title) title.textContent = pageContext.section.label;
+      document.title =
+        `${moduleTitle} | ${config.site.name || "UPSC GS-I"}`;
+
+      if (title) title.textContent = moduleTitle;
+
       return;
     }
 
     if (pageContext.type === "chapter") {
-      document.title =
-        `${pageContext.chapter.label} | ${config.site.name || "UPSC GS-I"}`;
+      const chapterTitle = pageContext.chapter.label;
 
-      if (title) title.textContent = pageContext.chapter.label;
+      document.title =
+        `${chapterTitle} | ${config.site.name || "UPSC GS-I"}`;
+
+      if (title) title.textContent = chapterTitle;
+
       return;
     }
 
     document.title = config.site.name || "UPSC GS-I";
   }
+
+  // ---------------------------------------------------------
+  // 10. Initialise shared site elements
+  // ---------------------------------------------------------
 
   function initialize() {
     renderHeader();
@@ -766,11 +942,16 @@
     console.info(
       `GS-I navigation loaded: ${config.sections.length} modules, ` +
       `${config.sections.reduce(
-        (total, section) => total + section.chapters.length,
+        (total, section) =>
+          total + section.chapters.length,
         0
       )} chapters.`
     );
   }
+
+  // ---------------------------------------------------------
+  // 11. Load configuration and start
+  // ---------------------------------------------------------
 
   async function start() {
     try {

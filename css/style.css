@@ -1,7 +1,7 @@
 
 /* =========================================================
    UPSC GS-I KNOWLEDGE SYSTEM
-   Global stylesheet — aligned with GS-II design
+   Global stylesheet — aligned with GS-II
    ========================================================= */
 
 /* 1. Design foundation */
@@ -23,6 +23,7 @@
   --content-max-width: 1100px;
 
   --font-family: Arial, Helvetica, sans-serif;
+
   --font-size-content: 12px;
   --font-size-section: 14px;
   --font-size-sidebar: 13px;
@@ -38,7 +39,7 @@
     border-color 0.18s ease;
 }
 
-/* 2. Reset and typography */
+/* 2. Reset and base typography */
 
 * {
   box-sizing: border-box;
@@ -128,7 +129,8 @@ img {
 
 /* 3. Site header */
 
-[data-site-header] {
+[data-site-header],
+.site-header {
   position: sticky;
   z-index: 1000;
   top: 0;
@@ -162,7 +164,6 @@ img {
 
 .site-brand:hover {
   color: var(--color-primary);
-  text-decoration: none;
 }
 
 .site-brand-mark {
@@ -180,9 +181,12 @@ img {
 }
 
 .site-brand-text {
+  display: flex;
+  flex-direction: column;
   color: var(--color-primary-dark);
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 /* 4. Primary navigation */
@@ -216,7 +220,6 @@ img {
 .primary-nav-link[aria-current="page"] {
   background: var(--color-hover);
   color: var(--color-primary);
-  text-decoration: none;
 }
 
 .module-dropdown {
@@ -275,7 +278,6 @@ img {
 .module-dropdown-link[aria-current="page"] {
   background: var(--color-hover);
   color: var(--color-primary);
-  text-decoration: none;
 }
 
 .module-dropdown-count {
@@ -343,7 +345,6 @@ img {
 
 .search-result-link:hover {
   background: var(--color-hover);
-  text-decoration: none;
 }
 
 .search-result-type {
@@ -356,78 +357,16 @@ img {
   color: var(--color-muted);
 }
 
-/* 6. Breadcrumbs */
-
-[data-breadcrumbs] {
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 12px 24px 5px;
-  color: var(--color-muted);
-  font-size: 11px;
-}
-
-[data-breadcrumbs] a {
-  color: var(--color-muted);
-}
-
-[data-breadcrumbs] a:hover {
-  color: var(--color-primary);
-}
-
-.breadcrumb-separator {
-  margin: 0 7px;
-  color: #a5b0ba;
-}
-
-.breadcrumb-current {
-  color: var(--color-primary-dark);
-  font-weight: 600;
-}
-
-/* 7. Main page layout */
-
-.page-layout,
-.content-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 20px 24px 48px;
-}
+/* 6. Main content area */
 
 main,
-.main-content,
-[data-main-content] {
-  flex: 1 1 auto;
-  min-width: 0;
-  font-size: var(--font-size-content);
-}
-
-.content-container {
+.site-main {
   width: 100%;
   max-width: var(--content-max-width);
+  min-width: 0;
   margin: 0 auto;
-  padding: 20px 24px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
-  background: var(--color-surface);
-}
-
-.page-title,
-.module-title,
-.chapter-title {
-  margin-bottom: 16px;
-  color: var(--color-primary-dark);
-  font-size: var(--font-size-section);
-}
-
-.section-title {
-  margin: 20px 0 12px;
-  color: var(--color-primary-dark);
-  font-size: var(--font-size-section);
+  padding: 28px 32px 48px;
+  font-size: var(--font-size-content);
 }
 
 main p,
@@ -435,6 +374,26 @@ main li,
 main td,
 main th {
   font-size: var(--font-size-content);
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+[data-page-title] {
+  font-size: var(--font-size-section);
+}
+
+main h1,
+main h2,
+main h3 {
+  margin-bottom: 12px;
+}
+
+main section {
+  margin-bottom: 24px;
 }
 
 main ul,
@@ -446,22 +405,103 @@ main li {
   margin-bottom: 5px;
 }
 
-/* 8. Secondary chapter navigation */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+}
 
-[data-secondary-navigation] {
-  position: sticky;
-  top: calc(var(--header-height) + 12px);
-  flex: 0 0 var(--sidebar-width);
-  width: var(--sidebar-width);
-  max-height: calc(100vh - var(--header-height) - 24px);
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 20px 14px 28px;
+main th,
+main td {
+  padding: 9px 11px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+main th {
+  background: var(--color-hover);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.content-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  min-width: 0;
+  margin: 0 auto;
+  padding: 20px 24px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-medium);
   background: var(--color-surface);
+}
+
+.page-title,
+.module-title,
+.chapter-title {
+  margin: 0 0 12px;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-section);
+}
+
+.section-title {
+  margin: 20px 0 12px;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-section);
+}
+
+/* 7. Main page and module layout */
+
+.page-layout,
+.content-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  max-width: 1500px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+/* The sidebar is fixed, as in GS-II.
+   Main content reserves the sidebar width. */
+
+.secondary-navigation,
+[data-secondary-navigation] {
+  position: fixed;
+  z-index: 500;
+  top: var(--header-height);
+  bottom: 0;
+  left: 0;
+  flex: 0 0 var(--sidebar-width);
+  width: var(--sidebar-width);
+  max-height: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px 14px 28px;
+  border-right: 1px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-surface);
   scrollbar-width: thin;
 }
+
+/* Shift module and chapter content to the right of the sidebar. */
+
+body:has(.secondary-navigation) .page-layout,
+body:has(.secondary-navigation) .content-layout {
+  max-width: none;
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  padding: 0 32px 48px;
+}
+
+body:has(.secondary-navigation) .content-container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* 8. Sidebar */
 
 .sidebar-heading {
   margin: 0 0 14px;
@@ -472,16 +512,19 @@ main li {
   font-weight: 700;
 }
 
+.chapter-navigation-list,
 .sidebar-chapter-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+.chapter-navigation-item,
 .sidebar-chapter-item {
   margin: 2px 0;
 }
 
+.chapter-navigation-link,
 .sidebar-chapter-link {
   display: block;
   padding: 7px 9px;
@@ -491,12 +534,14 @@ main li {
   line-height: 1.45;
 }
 
+.chapter-navigation-link:hover,
 .sidebar-chapter-link:hover {
   background: var(--color-hover);
   color: var(--color-primary);
-  text-decoration: none;
 }
 
+.chapter-navigation-item.is-active .chapter-navigation-link,
+.chapter-navigation-link[aria-current="page"],
 .sidebar-chapter-link.active,
 .sidebar-chapter-link[aria-current="page"] {
   background: var(--color-active);
@@ -505,7 +550,61 @@ main li {
   box-shadow: inset 3px 0 0 var(--color-accent);
 }
 
-/* 9. Home page introduction and module directory */
+/* 9. Breadcrumbs */
+
+[data-breadcrumbs],
+.breadcrumbs {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 20px;
+  padding: 12px 24px 5px;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  color: #a5b0ba;
+  content: "/";
+}
+
+.breadcrumb-item a,
+[data-breadcrumbs] a {
+  color: var(--color-muted);
+}
+
+.breadcrumb-item a:hover,
+[data-breadcrumbs] a:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumb-item:last-child,
+.breadcrumb-current {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+/* 10. Home page */
+
+.home-page {
+  max-width: 1500px;
+}
 
 [data-home-intro] {
   margin: 0 0 18px;
@@ -514,8 +613,10 @@ main li {
 }
 
 [data-module-directory] {
+  display: block;
   width: 100%;
-  margin-top: 20px;
+  max-width: 100%;
+  margin-top: 24px;
   overflow-x: auto;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-medium);
@@ -523,8 +624,9 @@ main li {
 }
 
 .module-directory-table {
+  display: table;
   width: 100%;
-  min-width: 650px;
+  min-width: 760px;
   border-collapse: collapse;
   table-layout: fixed;
   background: var(--color-surface);
@@ -575,9 +677,9 @@ main li {
   background: var(--color-hover);
 }
 
-.module-table-number,
-.module-table-count {
+.module-table-number {
   color: var(--color-muted);
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -590,23 +692,46 @@ main li {
   color: var(--color-accent);
 }
 
+.module-table-count {
+  color: var(--color-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .module-table-description {
   color: var(--color-muted);
 }
 
-/* 10. Module landing page */
+/* 11. Module introduction and subtitle */
 
-[data-module-content] {
-  width: 100%;
+.module-introduction {
+  margin-bottom: 22px;
 }
 
+.module-subtitle,
 [data-module-description] {
-  margin-bottom: 14px;
+  margin: 0 0 14px;
   color: var(--color-muted);
+  font-size: var(--font-size-content);
+  line-height: 1.7;
 }
 
+.module-explanation,
 [data-module-explanation] {
   margin-bottom: 18px;
+  color: var(--color-text);
+}
+
+.module-metadata {
+  margin: 16px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+}
+
+.study-guidance {
+  margin: 16px 0;
 }
 
 [data-study-guidance-list] {
@@ -622,16 +747,21 @@ main li {
   margin-bottom: 18px;
 }
 
-/* 11. Chapter directory */
+/* 12. Chapter directory */
 
+.chapter-directory {
+  margin-top: 22px;
+}
+
+.chapter-directory-list,
 [data-chapter-list] {
   margin: 10px 0 20px;
   padding-left: 22px;
 }
 
+.chapter-directory-list li,
 .chapter-directory-item {
   margin-bottom: 8px;
-  padding-left: 2px;
 }
 
 .chapter-directory-link {
@@ -639,43 +769,56 @@ main li {
   font-weight: 600;
 }
 
+.chapter-directory-link:hover {
+  color: var(--color-accent);
+}
+
 .chapter-status {
   display: inline-block;
-  margin-left: 7px;
+  margin-left: 6px;
   color: var(--color-muted);
   font-size: 10px;
 }
 
-/* 12. Chapter content */
+/* 13. Chapter content */
 
-article {
+article,
+.chapter-content {
+  width: 100%;
   min-width: 0;
   overflow-wrap: anywhere;
 }
 
-article section {
-  margin-bottom: 24px;
+article section,
+.chapter-content section {
+  margin-bottom: 26px;
 }
 
 article h2,
 article h3,
-article h4 {
+article h4,
+.chapter-content h2,
+.chapter-content h3 {
   margin-top: 22px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--color-border);
 }
 
 article ul,
-article ol {
+article ol,
+.chapter-content ul,
+.chapter-content ol {
   margin-top: 6px;
   margin-bottom: 14px;
 }
 
-article li {
+article li,
+.chapter-content li {
   margin-bottom: 5px;
 }
 
-article table {
+article table,
+.chapter-content table {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -686,20 +829,24 @@ article table {
 }
 
 article table th,
-article table td {
+article table td,
+.chapter-content table th,
+.chapter-content table td {
   padding: 9px 11px;
   border: 1px solid var(--color-border);
   text-align: left;
   vertical-align: top;
 }
 
-article table th {
+article table th,
+.chapter-content table th {
   background: var(--color-hover);
   color: var(--color-primary-dark);
   font-weight: 700;
 }
 
-article blockquote {
+article blockquote,
+.chapter-content blockquote {
   margin: 16px 0;
   padding: 12px 16px;
   border-left: 3px solid var(--color-accent);
@@ -707,7 +854,8 @@ article blockquote {
   color: var(--color-text);
 }
 
-article pre {
+article pre,
+.chapter-content pre {
   max-width: 100%;
   overflow-x: auto;
   padding: 12px;
@@ -718,20 +866,25 @@ article pre {
   overflow-wrap: anywhere;
 }
 
-article code {
+article code,
+.chapter-content code {
   font-family: Consolas, Monaco, monospace;
   font-size: 11px;
 }
 
 article img,
 article video,
-article iframe {
+article iframe,
+.chapter-content img,
+.chapter-content video,
+.chapter-content iframe {
   max-width: 100%;
 }
 
-/* 13. Previous and next chapter navigation */
+/* 14. Previous and next chapter navigation */
 
-[data-chapter-pagination] {
+[data-chapter-pagination],
+.page-navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -742,7 +895,9 @@ article iframe {
 }
 
 .chapter-previous,
-.chapter-next {
+.chapter-next,
+.previous-chapter,
+.next-chapter {
   display: inline-flex;
   align-items: center;
   max-width: 48%;
@@ -754,20 +909,23 @@ article iframe {
 }
 
 .chapter-previous:hover,
-.chapter-next:hover {
+.chapter-next:hover,
+.previous-chapter:hover,
+.next-chapter:hover {
   border-color: var(--color-primary);
   background: var(--color-hover);
-  text-decoration: none;
 }
 
 .chapter-previous.disabled,
-.chapter-next.disabled {
+.chapter-next.disabled,
+.is-disabled {
   visibility: hidden;
 }
 
-/* 14. Footer */
+/* 15. Footer */
 
-[data-site-footer] {
+[data-site-footer],
+.site-footer {
   width: 100%;
   margin-top: 40px;
   padding: 18px 24px;
@@ -787,17 +945,14 @@ article iframe {
   font-size: 11px;
 }
 
-.footer-copyright {
+.footer-copyright,
+.footer-text {
   margin: 0;
   color: var(--color-muted);
   font-size: 11px;
 }
 
-/* 15. General elements and utilities */
-
-main table {
-  border-collapse: collapse;
-}
+/* 16. Utilities */
 
 .info-box {
   margin: 14px 0;
@@ -843,7 +998,17 @@ main table {
   display: none !important;
 }
 
-/* 16. Tablet layout */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+/* 17. Tablet layout */
 
 @media (max-width: 900px) {
   :root {
@@ -864,15 +1029,14 @@ main table {
     flex-basis: 180px;
   }
 
-  .page-layout,
-  .content-layout {
-    gap: 14px;
-    padding-right: 16px;
-    padding-left: 16px;
+  body:has(.secondary-navigation) .page-layout,
+  body:has(.secondary-navigation) .content-layout {
+    padding-right: 22px;
+    padding-left: 24px;
   }
 }
 
-/* 17. Mobile layout */
+/* 18. Mobile layout */
 
 @media (max-width: 680px) {
   :root {
@@ -880,7 +1044,8 @@ main table {
     --sidebar-width: 100%;
   }
 
-  [data-site-header] {
+  [data-site-header],
+  .site-header {
     position: relative;
   }
 
@@ -919,7 +1084,8 @@ main table {
     min-width: 100%;
   }
 
-  [data-breadcrumbs] {
+  [data-breadcrumbs],
+  .breadcrumbs {
     padding: 10px 14px 5px;
   }
 
@@ -927,31 +1093,49 @@ main table {
   .content-layout {
     flex-direction: column;
     gap: 12px;
-    padding: 12px 12px 30px;
+    padding: 0 12px 30px;
   }
 
+  .secondary-navigation,
   [data-secondary-navigation] {
     position: relative;
     top: auto;
+    bottom: auto;
     width: 100%;
     max-height: 280px;
+    border-right: 0;
     border-bottom: 1px solid var(--color-border);
+  }
+
+  body:has(.secondary-navigation) .page-layout,
+  body:has(.secondary-navigation) .content-layout {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 12px 30px;
   }
 
   .content-container {
     padding: 14px;
   }
 
-  .module-directory-table {
-    min-width: 650px;
+  .site-main,
+  main {
+    padding: 20px 16px 36px;
   }
 
-  [data-chapter-pagination] {
+  .module-directory-table {
+    min-width: 760px;
+  }
+
+  [data-chapter-pagination],
+  .page-navigation {
     gap: 8px;
   }
 
   .chapter-previous,
-  .chapter-next {
+  .chapter-next,
+  .previous-chapter,
+  .next-chapter {
     max-width: 50%;
     padding: 8px;
   }
@@ -960,9 +1144,15 @@ main table {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  [data-site-footer],
+  .site-footer {
+    margin-top: 24px;
+    padding: 15px;
+  }
 }
 
-/* 18. Reduced motion */
+/* 19. Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
   *,
